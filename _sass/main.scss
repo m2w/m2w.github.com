@@ -1,4 +1,6 @@
 @import "_base";
+@import "_code";
+@import "_comments";
 
 body {
     color: $base-color;
@@ -114,6 +116,7 @@ article > p + p {
 }
 
 article + hr {
+    clear: both;
     @include leader();
     @include trailer();
 }

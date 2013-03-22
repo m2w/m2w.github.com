@@ -9,6 +9,7 @@ layout: base
             <small>{{ post.date | date_to_long_string }}, posted by {{ site.author.name }}. {% if post.tags and post.tags != empty %}<br>Tagged as: {{ post.tags | array_to_sentence_string }}{% endif %}</small>
         </header>
         {{ post.content }}
+        {% include comments-placeholder.html %}
     </article>
     {% unless forloop.last %}<hr>{% endunless %}
 {% endfor %}
