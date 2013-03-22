@@ -1,0 +1,170 @@
+@import "_base";
+
+body {
+    color: $base-color;
+    font-family: Serif;
+}
+
+h1 {
+    font-size: $h2-size;
+}
+
+h2 {
+    font-size: $h2-size;
+    text-indent: -1.5rem;
+    @include leader(0.5);
+    @include trailer(0.5);
+}
+
+h3 {
+    font-size: $h3-size;
+    text-indent: -0.75rem;
+    @include leader(0.5);
+    @include trailer(0.5);
+}
+
+h3 + ul {
+    padding-left: 1.5rem;
+}
+
+a {
+    @include base-link;
+    &:visited {
+        color: $dark-red;
+    }
+    &:hover, &:focus {
+        @include highlight-link;
+    }
+}
+
+small {
+    font-size: 85%;
+}
+
+footer {
+    @include leader();
+    @include trailer(0.5);
+    clear: both;
+    text-align: center;
+}
+
+em {
+    font-style: italic;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+b {
+    font-weight: bold;
+}
+
+dd {
+    padding-left: 1rem;
+    @include trailer(0.5);
+}
+
+article {
+    position: relative;
+}
+
+article header h2 {
+    display:inline-block;
+}
+
+article header small {
+    float: right;
+}
+
+article header + * {
+    clear: both;
+}
+
+article ul {
+    @include leader(0.5);
+    @include trailer(0.5);
+    list-style: disc;
+    padding-left: 3rem;
+    position: relative;
+}
+
+ol {
+    @include leader(0.5);
+    @include trailer(0.5);
+    list-style: decimal;
+    padding-left: 3rem;
+    position: relative;
+}
+
+article footer {
+    clear: both;
+    text-align: left;
+    font-size: 90%;
+    @include leader();
+    @include trailer();
+    ol {
+        padding-left: 1.5rem;
+    }
+}
+
+article > p + p {
+    @include leader(0.5);
+}
+
+article + hr {
+    @include leader();
+    @include trailer();
+}
+
+#{nest("p >, li >", "code")} {
+    @include inline-code;
+}
+
+div#container {
+    min-width: 540px;
+    margin: auto;
+    width: 80%;
+}
+
+div#header {
+    margin-top: 1rem;
+}
+
+h1#logo {
+    @include background-image(url('/static/img/logo.png'));
+    background-repeat: no-repeat;
+    line-height: 2.5rem;
+    height: image-height('../img/logo.png');
+    text-indent: image-width('../img/logo.png') + em_to_px(1);
+    display: inline-block;
+    padding-top: 1rem;
+}
+
+div#tagline {
+    font-family: monospace;
+    display: inline;
+    padding-left: 1.5rem;
+}
+
+div#nav {
+    display: inline;
+    float: right;
+    margin-bottom: 1rem;
+}
+
+div#nav a {
+    font-size: $h3-size;
+    margin: 0 0.3rem;
+}
+
+div#main {
+    clear: both;
+}
+
+div#pagination {
+    clear: both;
+    margin: 1rem 1rem 0 1rem;
+    text-align: center;
+}

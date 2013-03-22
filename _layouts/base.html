@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="description" content="A blog on programming, learning and traveling">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title }}</title>
+    
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="/"><h1 id="logo">{{ site.title }}</h1></a>
+            <div id="tagline">- {{ site.tagline }}</div>
+            <div id="nav">
+                {% for p in site.dedicated-pages %}
+                    <a href="{{ p.details.url }}" class="{% if p.details.url == page.url %}current{% endif %}">{{ p.details.title }}</a>
+                    {% unless forloop.last %} | {% endunless %}
+                {% endfor %}
+            </div>
+        </div>
+        <div id="main">{{ content }}</div>
+    </div>
+    <footer>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br>
+    </footer>
+</body>

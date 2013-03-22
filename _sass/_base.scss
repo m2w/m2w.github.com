@@ -1,0 +1,41 @@
+/* includes */
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+@import "compass/typography/lists/horizontal-list";
+@import "_code";
+
+/* vertical rythm */
+$base-font-size: 17px;
+@include establish-baseline;
+
+/* Variables */
+$base-color: #444;
+$header-color: #222;
+
+$red: #BA1204;
+$dark-red: #A31105;
+$light-red: #CA1000;
+
+$h1-size: 2rem;
+$h2-size: 1.6rem;
+$h3-size: 1.2rem;
+
+/* Mixins */
+@mixin base-link {
+    text-decoration: none;
+    color: $red;
+}
+@mixin highlight-link {
+    color: $light-red;
+    text-shadow: 1px 1px #BA1204;
+}
+@mixin inline-code {
+    background: #F7F7F7;
+    padding: 0.1em 0.3em;
+    font-size: 90%;
+}
+
+/* Helper functions */
+@function em_to_px($em) {
+    @return  $base-font-size * $em + 0px;
+}
