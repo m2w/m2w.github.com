@@ -207,7 +207,11 @@ var updateCommentMeta = function(permalink_element, comment_data) {
         wrapper.find('div.comment-count a').attr('href', latest_commit_url).text('Be the first to comment');
         wrapper.find('div.comments a.add-comment-link').hide();
     }
-    wrapper.find('div.comments a.add-comment-link').attr('href', latest_commit_url);
+    wrapper.find('div.comments a.add-comment-link').attr('href', latest_commit_url).click(function(e){
+        if (LOCAL_STORAGE_SUPPORTED) {
+            sessionStorage.removeItem(permalink_element.get(0).href);
+        }
+    });
 };
 
 $(document).ready(function() {
