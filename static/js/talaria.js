@@ -1,11 +1,14 @@
 /*global document,$,sessionStorage,location*/
+
 /*
  * A javascript wrapper around the github API that facilitates
  * a simple commit-comment based commenting system for static
  * content sites (e.g. github pages).
  */
 
-/* Configuration */
+/* 
+ * Configuration 
+ */
 var REPOSITORY_NAME = 'm2w.github.com',
     GITHUB_USERNAME = 'm2w',
     COMMENTABLE_CONTENT_PATH_PREFIX = '_posts/',
@@ -15,7 +18,11 @@ var REPOSITORY_NAME = 'm2w.github.com',
     COMMENT_API_ENDPOINT = 'https://api.github.com/repos/' + GITHUB_USERNAME + '/' + REPOSITORY_NAME + '/comments',
     COMMIT_API_ENDPOINT = 'https://api.github.com/repos/' + GITHUB_USERNAME + '/' + REPOSITORY_NAME + '/commits',
     REPO_COMMIT_URL_ROOT = 'https://github.com/' + GITHUB_USERNAME + '/' + REPOSITORY_NAME + '/commit/';
-/* Utilities */
+
+/* 
+ * Utilities 
+ */
+
 function extrapolatePathFromPermalink(permalink_url) {
     'use strict';
     return permalink_url.replace(/[\.\w\-_:\/]+\/(\d+)\/(\d+)\/(\d+)\/([\w\-_]+)$/,
@@ -38,10 +45,11 @@ function localStorageSupported() {
 function byAscendingDate(commentA, commentB) {
     return new Date(commentA.updated_at) > new Date(commentB.updated_at);
 }
-/* function timeDifference is taken from:
+/* 
+ * timeDifference is taken from:
  * http://stackoverflow.com/questions/6108819/javascript-timestamp-to-relative-time-eg-2-seconds-ago-one-week-ago-etc-best
- * with tweaks by me
- * Returns time elapsed in verbatim */
+ * tweaks by me
+ */
 function timeDifference(current, previous) {
     'use strict';
     function maybePluralize(elapsed) {
@@ -92,7 +100,9 @@ var maybeGetCachedVersion = function(url) {
     }
     return undefined;
 };
-/* github API interaction */
+/* 
+ * github API interaction 
+ */
 var retrieveCommentsForCommit = function(commit) {
     'use strict';
     var dfd = new $.Deferred();
@@ -101,7 +111,6 @@ var retrieveCommentsForCommit = function(commit) {
     });
     return dfd;
 };
-// combines the results of github API lookups for a file (i.e. permalink)
 var combineDataForFile = function(path, commits) {
     'use strict';
     var dfd = new $.Deferred(),
@@ -152,7 +161,9 @@ var retrieveDataForPermalink = function(url) {
     }
     return wrapper_dfd;
 };
-/* HTML generators */
+/* 
+ * HTML generators 
+ */
 var generateHtmlForComments = function(comment) {
     'use strict';
     var now = new Date().getTime(),
@@ -169,7 +180,9 @@ var generateHtmlForComments = function(comment) {
     template_clone.show();
     return template_clone;
 };
-/* HTML manipulators */
+/* 
+ * HTML manipulators 
+ */
 var updateCommentMeta = function(permalink_element, comment_data) {
     'use strict';
     var wrapper = permalink_element.parents('article').find('div.comments-wrapper'),
@@ -187,7 +200,6 @@ var updateCommentMeta = function(permalink_element, comment_data) {
     latest_commit_url = REPO_COMMIT_URL_ROOT + latest_commit.sha + '#all_commit_comments';
     wrapper.find('a.github-comments-link').attr('href', latest_commit_url);
     if (comment_data.comments.length > 0) {
-
         // check if currently displaying paginated content
         if (location.pathname === "/" || /\/page\d+\//.test(location.pathname)) {
             c = comment_data.comments.length;
@@ -217,6 +229,7 @@ var updateCommentMeta = function(permalink_element, comment_data) {
 $(document).ready(function() {
     'use strict';
 
+    // check for local storage support
     if (localStorageSupported) {
         LOCAL_STORAGE_SUPPORTED = true;
     }
