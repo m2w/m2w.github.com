@@ -3,9 +3,9 @@ layout: base
 ---
 <article>
     <header>
-        <h2><a href="{{ page.url }}" class="permalink">&para;</a> {{ page.title }}</h2>
-         <small>{{ page.date | date_to_long_string }}, posted by {{ site.author.name }}. {% if page.tags and page.tags != empty %}<br>Tagged as: {{ page.tags | array_to_sentence_string }}{% endif %}</small>
+        <h2><a href="{{ page.url }}" class="permalink">#</a> {{ page.title }}</h2>
+        <small>— {{ page.date | date_to_long_string }}</small>
+        <small>{% if page.tags and page.tags != empty %}{{ page.tags | array_to_sentence_string }}{% endif %}</small>
     </header>
     {{ content }}
-    {% include comments-placeholder.html %}
 </article>

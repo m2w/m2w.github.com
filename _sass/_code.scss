@@ -1,5 +1,11 @@
+$code: 0.85em;
+$small-code: 0.75em;
+
 code {
     font-family: monospace;
+    font-size: $code;
+    background: #F7F7F7;
+    padding: 0 0.1em 0 0.1em;
 }
 
 pre {
@@ -8,8 +14,7 @@ pre {
 
 div.highlight {
     background: #F7F7F7;
-    font-size: 90%;
-    margin: 0.75rem;
+    font-size: $code;
     padding: 0.5rem;
     position: relative;
     pre {

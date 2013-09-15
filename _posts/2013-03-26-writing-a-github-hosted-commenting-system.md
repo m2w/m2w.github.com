@@ -3,7 +3,7 @@ layout: post
 title: Writing a github hosted commenting system
 tags: [github, jQuery]
 ---
-I just pushed the [beta version of my commenting system](https://github.com/m2w/talaria) for this blog to github. Code-named talaria, it provides commenting for any file-identifiable<sup><a href="#note1" id="note1-return">1</a></sup> content via github commit message comments.
+I just pushed the [beta version of my commenting system](https://github.com/m2w/talaria) for this blog to github. Code-named talaria, it provides commenting for any file-identifiable<a href="#note1" id="note1-return">[1]</a> content via github commit message comments.
 
 talaria works based on a number of assumptions:
 
@@ -36,7 +36,6 @@ The actual functionality is very simple and the majority of the work is handled 
 Getting around the XSS limitations with the github API is thankfully very simple as they offer support for CORS. All it takes is to [register an OAuth application](https://github.com/settings/applications/new) for the domain and from there everything just works&trade;.
 
 Writing talaria was a great way to experiment with `$.Deferred()`, which are totally awesome!
-
 <footer class="article">
     <ol class="foot-notes">
         <li id="note1">I consider content "file-identifiable", if the full content is contained in its own file, such as the markup source for a blog post.<a href="#note1-return">&#8617;</a></li>

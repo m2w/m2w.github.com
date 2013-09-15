@@ -3,15 +3,14 @@ title: blog.tibidat
 layout: base
 ---
 {% for post in paginator.posts %}
-    <article>
-        <header>
-            <h2><a href="{{ post.url }}" class="permalink">&para;</a> {{ post.title }}</h2>
-            <small>{{ post.date | date_to_long_string }}, posted by {{ site.author.name }}. {% if post.tags and post.tags != empty %}<br>Tagged as: {{ post.tags | array_to_sentence_string }}{% endif %}</small>
-        </header>
-        {{ post.content }}
-        {% include comments-placeholder.html %}
-    </article>
-    {% unless forloop.last %}<hr>{% endunless %}
+<article>
+    <header>
+        <h2><a href="{{ post.url }}" class="permalink">#</a> {{ post.title }}</h2>
+        <small>— {{ post.date | date_to_long_string }}</small>
+        <small>{% if post.tags and post.tags != empty %}{{ post.tags | array_to_sentence_string }}{% endif %}</small>
+    </header>
+    {{ post.content }}
+</article>
 {% endfor %}
 {% if paginator.total_posts > site.paginate %}
     <div id="pagination">
@@ -21,11 +20,10 @@ layout: base
             {% else %}
                 {% capture prev %}/page{{ paginator.previous_page }}{% endcapture %}
             {% endif %}
-            <a href="{{ prev }}">&#8592; newer entries</a>
+            <a href="{{ prev }}" class="huge">≪</a>
         {% endif %}
-        <span style="{% if paginator.next_page and paginator.previous_page %}{% else %}display:none;{% endif %}"> | </span>
         {% if paginator.next_page %}
-            <a href="/page{{ paginator.next_page }}">older entries &#8594;</a>
+            <a href="/page{{ paginator.next_page }}" class="huge">≫</a>
         {% endif %}
     </div>
 {% endif %}

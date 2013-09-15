@@ -1,0 +1,95 @@
+belletristic: 
+    -read: 
+        title: Great North Road
+        author: Peter F. Hamilton
+        comment: Gripping science fiction, set in a grim and realistic future. I had high expectations and Hamilton delivered as usual.
+    -read:
+        title: The Lost World
+        author: Arthur Conan Doyle
+        comment: A great fiction classic, fast paced and with plenty of action.
+    -read: 
+        title: The Glassblower of Murano
+        author: Marina Fiorato
+        comment: An intriguing mélange of past and present timelines. A little cheesy at times.
+    -read: 
+        title: Judas Unchained
+        author: Peter F. Hamilton
+        comment: Space Opera at its finest: a gripping, long and epic storyline with a multitude of interwoven sub-plots.
+    -read: 
+        title: If at First
+        author: Peter F. Hamilton
+        comment: A Hamilton short story, more needn't be said.
+    -read: 
+        title: The Forever War
+        author: Joe Haldeman
+        comment: Beautiful, intelligent science fiction.
+    -read: 
+        title: The Importance of Being Earnest
+        author: Oscar Wilde
+        comment: Humorous and witty, it is not without reason Wilde's most popular play.
+    -read: 
+        title: Still Missing
+        author: Chevy Stevens
+        comment: Shocking and emotional. A thriller, whose unusual approach to storytelling provides a very effective vehicle to convey the protagonists emotions and facilitate empathy by the reader.
+    -read: 
+        title: Die Sturmkönige Trilogie
+        author: Kai Meyer
+        comment: German fantasy. Set in an unorthodox universe with a lot of, albeit partially untapped, potential, that made for fast page-turning.
+    -read:
+        title: Anathem
+        author: Neal Stephenson
+        comment: Extremely well-written, thought-provoking science fiction.
+    -read:
+        title: Neuromancer
+        author: William Gibson
+        comment: Great science fiction in a bleak and grim future.
+    -read:
+        title: The Left Hand Of Darkness
+        author: Ursula K. Le Guin
+        comment: An exploration of gender and gender-related issues, on a planet where gender is not predetermined or fixed.
+
+non-fiction:
+    -read:
+        title: George F. Kennen: An American life
+        author: John Lewis Gaddis
+        comment: A beautifully written biography that provides a look behind the scenes of America's Cold War foreign policy through the eyes of its foremost strategist. 
+    -read: 
+        title: The Guns of August
+        author: Barbara W. Tuchman
+        comment: Rare are such well-written and well edited books. It provides a detailed look at the events that lead to, and the unfolding of, World War I.
+    -read: 
+        title: Peopleware
+        author: Tom DeMarco &amp; Timothy Lister
+        comment: Regularly mentioned as recommended reading on HN and proggit, it is an fast and very interesting read.
+    -read: 
+        title: Moonwalking with Einstein
+        author: Joshua Foer
+        comment: A book on Bill Gates' reading list, that was a fantastical read, filled with insights and curious annecdotes about our memory.
+    -read: 
+        title: "Surely You're Joking, Mr. Feynman!"
+        author: Richard Phillips Feynman
+        comment: An Enjoyable read with some very quirky and funny anecdotes by one of the great scientific minds of our time.
+    -read: 
+        title: The Power of Habit
+        author: Charles Duhigg
+        comment: Well written and very immersive, a treasure trove of insights on taking control of our habits, it is probably the best "how-to" guide to changing your life and yet never feels like one.
+    -read: 
+        title: Fermat's Last Theorem
+        author: Simon Singh
+        comment: An exploration of a fascinating topic. I felt it was a little too superficial (simplified might be the better word), I would have loved more historical details or more discussion of the consequences of some of the mentioned discoveries.
+    -read: 
+        title: In God's House
+        author: Ray Mouton
+        comment: A scary, vivid and shocking account of the trial that led to the uncovering of the systematic abuse and cover-up of abuse in the catholic church in America. In the words of Sue Blaine: "the extent of the rot is awe-inspiring".
+    -read: 
+        title: Forgotten Fatherland
+        author: Ben Macintyre
+        comment: A portrayal of Nietzsche's sister, who was largely responsible for associating her brother's works with the ideologies of the third reich.
+    -read: 
+        title: Behind the Beautiful Forever
+        author: Katherine Boo
+        comment: A riveting account of life in one of Mumbai's slums. Its ending left me aching for real closure.
+    -read: 
+        title: Guns Up! A Firsthand Account of the Vietnam War
+        author: Johnnie Clark
+        comment: A vivid and captivating portrayal of the everyday life of a "grunt" during the Vietnam War.

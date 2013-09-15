@@ -1,4 +1,4 @@
-title: 'blog.tibidat'
+title: 'food for thought'
 tagline: spawn(programming, apply, [for_fun, for_profit])
 author:
     name: Moritz
@@ -19,6 +19,6 @@ dedicated-pages:
 permalink: /:year/:month/:day/:title
 exclude: ["CNAME", "config.rb", "talaria"]
 markdown: redcarpet
-paginate: 2
+paginate: 1
 server_port: 8001
 pygments: true

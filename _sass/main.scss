@@ -1,173 +1,103 @@
 @import "_base";
 @import "_code";
+/*
 @import "_talaria";
+*/
+
+/* Font Defs */
+$extra-huge: 2.5em;
+$huge: 2em;
+$extra-large: 1.8em;
+$large: 1.5em;
+$big: 1.3em;
+/* Color Defs */
+$red: #BA1204;
+$dark-red: #A31105;
+$light-red: #CA1000;
 
 body {
-    color: $base-color;
-    font-family: Serif;
-}
-
-h1 {
-    font-size: $h2-size;
-}
-
-h2 {
-    font-size: $h2-size;
-    text-indent: -1.5rem;
-    @include leader(0.5);
-    @include trailer(0.5);
-}
-
-h3 {
-    font-size: $h3-size;
-    text-indent: -0.75rem;
-    @include leader(0.5);
-    @include trailer(0.5);
-}
-
-h3 + ul {
-    padding-left: 1.5rem;
-}
-
-a {
-    @include base-link;
-    &:visited {
-        color: $dark-red;
-    }
-    &:hover, &:focus {
-        @include highlight-link;
-    }
-}
-
-small {
-    font-size: 85%;
-}
-
-footer {
-    @include leader();
-    @include trailer(0.5);
-    clear: both;
-    text-align: center;
-}
-
-em {
-    font-style: italic;
-}
-
-sup {
-    vertical-align: super;
-    font-size: smaller;
-}
-
-b {
-    font-weight: bold;
-}
-
-dd {
-    padding-left: 1rem;
-    @include trailer(0.5);
-}
-
-article {
-    position: relative;
-}
-
-article header h2 {
-    display:inline-block;
-}
-
-article header small {
-    float: right;
-}
-
-article header + * {
-    clear: both;
-}
-
-article ul {
-    @include leader(0.5);
-    @include trailer(0.5);
-    list-style: disc;
-    padding-left: 3rem;
-    position: relative;
-}
-
-ol {
-    @include leader(0.5);
-    @include trailer(0.5);
-    list-style: decimal;
-    padding-left: 3rem;
-    position: relative;
-}
-
-article footer {
-    clear: both;
-    text-align: left;
-    font-size: 90%;
-    @include leader();
-    @include trailer();
-    ol {
-        padding-left: 1.5rem;
-    }
-}
-
-article > p + p {
-    @include leader(0.5);
-}
-
-article + hr {
-    clear: both;
-    @include leader();
-    @include trailer();
-}
-
-#{nest("p >, li >", "code")} {
-    @include inline-code;
+    /*line-height: 1.1em;*/
+    /*
+    TODO: come up with a way to keep the logo centered on visible content
+    background-image: url('/static/img/logo.png');
+    background-repeat: no-repeat;
+    background-position: 0px 10%;
+    */
 }
 
 div#container {
-    min-width: 540px;
-    margin: auto;
-    width: 80%;
-}
-
-div#header {
-    margin-top: 1rem;
-}
-
-h1#logo {
-    @include background-image(url('/static/img/logo.png'));
-    background-repeat: no-repeat;
-    line-height: 2.5rem;
-    height: image-height('../img/logo.png');
-    text-indent: image-width('../img/logo.png') + em_to_px(1);
-    display: inline-block;
-    padding-top: 1rem;
-}
-
-div#tagline {
-    font-family: monospace;
-    display: inline;
-    padding-left: 1.5rem;
-}
-
-div#nav {
-    display: inline;
-    float: right;
-    margin-bottom: 1rem;
-}
-
-div#nav a {
-    font-size: $h3-size;
-    margin: 0 0.3rem;
-}
-
-div#main {
-    clear: both;
+    width: 600px;
+    margin: 1em auto 1em auto;
 }
 
 div#pagination {
-    clear: both;
-    margin: 1rem 1rem 0 1rem;
-    text-align: center;
+    width: 4em;
+    margin: auto;
+    padding-top: 1em;
+}
+
+h1 {
+    font-size: $huge;
+    margin: 0.2em 0 0.2em;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+h2 {
+    font-size: $extra-large;
+    margin: 0.2em 0 0.2em;
+    text-indent: -1em;
+}
+
+small {
+    font-size: smaller;
+}
+
+ul, ol {
+    padding-left: 1.5em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: lower-alpha;
+}
+
+a {
+    text-decoration: none;
+    color: $red;
+    font-weight: bold;
+
+    &:visited {
+        color: $dark-red;
+    }
+
+    &:hover, &:focus {
+        color: $red;
+        text-shadow: 0.5px 0.5px $light-red;
+    }
+}
+
+.huge {
+    font-size: $extra-huge;
+}
+
+article {
+    p {
+        padding-bottom: 0.5em;
+    }
+    #{nest("ul, ol, div,", "+ p")} {
+        padding-top: 0.5em;
+    }
+
+    header {
+        margin-bottom: 1em;
+
+        small {
+            font-style: italic;
+            /* TODO: right-aligned without float */
+        }       
+    }
 }
