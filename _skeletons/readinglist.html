@@ -1,24 +1,22 @@
 ---
 layout: base
+title: A reading list
 ---
+<h2>{{ page.title }}</h2>
+
 <article>
-    <header>
-        <h2>{{ page.title }}</h2>
-    </header>
-    {{context}}
-        {% for collection in readinglist %}
-            {% for item in collection %}
-                {% if forloop.first %}
-                    <h3>{{item}}</h3>
-                {% else %}
-                    {% for details in item %}
-                        <dl>
-                            <dt><strong>{{ details.data.title }}</strong> - <small>{{ details.data.author }}</small></dt>
-                            <dd>{{ details.data.comment }}</dd>
-                        </dl>
-                    {% endfor %}
-                {% endif %}
+    {% for category in readinglist %}
+        <section>
+            <header>
+                <h3>{{ category[0] | capitalize }}</h3>
+            </header>
+            {% for entry in category[1] %}
+                <dl>
+                    <dt><strong><a href="{{ entry.link }}">{{ entry.title }}</a></strong> — {{ entry.author }}</dt>
+                    <dd><small>{{ entry.comment }}</small></dd>
+                </dl>
             {% endfor %}
-        {% endfor %}
-    <footer>Note that all links are Amazon affiliate links.</footer>
+        </section>
+    {% endfor %}
+    <footer class="notice">Note that all links are Amazon affiliate links.</footer>
 <article>

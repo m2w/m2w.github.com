@@ -1,96 +1,118 @@
+--- 
+non-fiction: 
+- data: 
+    comment: A beautifully written biography that provides a look behind the scenes of America's Cold War foreign policy through the eyes of its foremost strategist.
+    link: dummy
+    author: John Lewis Gaddis
+    title: George F. Kennen&#58; An American life
+- data: 
+    comment: Rare are such well-written and well edited books. It provides a detailed look at the events that lead to, and the unfolding of, World War I.
+    link: dummy
+    author: Barbara W. Tuchman
+    title: The Guns of August
+- data: 
+    comment: Regularly mentioned as recommended reading on HN and proggit, it is an fast and very interesting read.
+    link: dummy
+    author: Tom DeMarco &amp; Timothy Lister
+    title: Peopleware
+- data: 
+    comment: A book on Bill Gates' reading list, that was a fantastical read, filled with insights and curious annecdotes about our memory.
+    link: dummy
+    author: Joshua Foer
+    title: Moonwalking with Einstein
+- data: 
+    comment: An Enjoyable read with some very quirky and funny anecdotes by one of the great scientific minds of our time.
+    link: dummy
+    author: Richard Phillips Feynman
+    title: Surely You're Joking, Mr. Feynman!
+- data: 
+    comment: Well written and very immersive, a treasure trove of insights on taking control of our habits, it is probably the best "how-to" guide to changing your life and yet never feels like one.
+    link: dummy
+    author: Charles Duhigg
+    title: The Power of Habit
+- data: 
+    comment: An exploration of a fascinating topic. I felt it was a little too superficial (simplified might be the better word), I would have loved more historical details or more discussion of the consequences of some of the mentioned discoveries.
+    link: dummy
+    author: Simon Singh
+    title: Fermat's Last Theorem
+- data: 
+    comment: A scary, vivid and shocking account of the trial that led to the uncovering of the systematic abuse within and cover-up by the American catholic church.
+    link: dummy
+    author: Ray Mouton
+    title: In God's House
+- data: 
+    comment: A portrayal of Nietzsche's sister, who was largely responsible for associating her brother's works with the ideologies of the third reich.
+    link: dummy
+    author: Ben Macintyre
+    title: Forgotten Fatherland
+- data: 
+    comment: A riveting account of life in one of Mumbai's slums. Its ending left me aching for real closure.
+    link: dummy
+    author: Katherine Boo
+    title: Behind the Beautiful Forever
+- data: 
+    comment: A vivid and captivating portrayal of the everyday life of a "grunt" during the Vietnam War.
+    link: dummy
+    author: Johnnie Clark
+    title: Guns Up! A Firsthand Account of the Vietnam War
 belletristic: 
-    - data: 
-        title: Great North Road
-        link: http://example.org
-        author: Peter F. Hamilton
-        comment: Gripping science fiction, set in a grim and realistic future. I had high expectations and Hamilton delivered as usual.
-    - data:
-        title: The Lost World
-        author: Arthur Conan Doyle
-        comment: A great fiction classic, fast paced and with plenty of action.
-    - data: 
-        title: The Glassblower of Murano
-        author: Marina Fiorato
-        comment: An intriguing mélange of past and present timelines. A little cheesy at times.
-    - data: 
-        title: Judas Unchained
-        author: Peter F. Hamilton
-        comment: Space Opera at its finest&#58; a gripping, long and epic storyline with a multitude of interwoven sub-plots.
-    - data: 
-        title: If at First
-        author: Peter F. Hamilton
-        comment: A Hamilton short story, more needn't be said.
-    - data: 
-        title: The Forever War
-        author: Joe Haldeman
-        comment: Beautiful, intelligent science fiction.
-    - data: 
-        title: The Importance of Being Earnest
-        author: Oscar Wilde
-        comment: Humorous and witty, it is not without reason Wilde's most popular play.
-    - data: 
-        title: Still Missing
-        author: Chevy Stevens
-        comment: Shocking and emotional. A thriller, whose unusual approach to storytelling provides a very effective vehicle to convey the protagonists emotions and facilitate empathy by the reader.
-    - data: 
-        title: Die Sturmkönige Trilogie
-        author: Kai Meyer
-        comment: German fantasy. Set in an unorthodox universe with a lot of, albeit partially untapped, potential, that made for fast page-turning.
-    - data:
-        title: Anathem
-        author: Neal Stephenson
-        comment: Extremely well-written, thought-provoking science fiction.
-    - data:
-        title: Neuromancer
-        author: William Gibson
-        comment: Great science fiction in a bleak and grim future.
-    - data:
-        title: The Left Hand Of Darkness
-        author: Ursula K. Le Guin
-        comment: An exploration of gender and gender-related issues, on a planet where gender is not predetermined or fixed.
-
-non-fiction:
-    - data:
-        title: George F. Kennen&#58; An American life
-        author: John Lewis Gaddis
-        comment: A beautifully written biography that provides a look behind the scenes of America's Cold War foreign policy through the eyes of its foremost strategist. 
-    - data: 
-        title: The Guns of August
-        author: Barbara W. Tuchman
-        comment: Rare are such well-written and well edited books. It provides a detailed look at the events that lead to, and the unfolding of, World War I.
-    - data: 
-        title: Peopleware
-        author: Tom DeMarco &amp; Timothy Lister
-        comment: Regularly mentioned as recommended reading on HN and proggit, it is an fast and very interesting read.
-    - data: 
-        title: Moonwalking with Einstein
-        author: Joshua Foer
-        comment: A book on Bill Gates' reading list, that was a fantastical read, filled with insights and curious annecdotes about our memory.
-    - data: 
-        title: "Surely You're Joking, Mr. Feynman!"
-        author: Richard Phillips Feynman
-        comment: An Enjoyable read with some very quirky and funny anecdotes by one of the great scientific minds of our time.
-    - data: 
-        title: The Power of Habit
-        author: Charles Duhigg
-        comment: Well written and very immersive, a treasure trove of insights on taking control of our habits, it is probably the best "how-to" guide to changing your life and yet never feels like one.
-    - data: 
-        title: Fermat's Last Theorem
-        author: Simon Singh
-        comment: An exploration of a fascinating topic. I felt it was a little too superficial (simplified might be the better word), I would have loved more historical details or more discussion of the consequences of some of the mentioned discoveries.
-    - data: 
-        title: In God's House
-        author: Ray Mouton
-        comment: A scary, vivid and shocking account of the trial that led to the uncovering of the systematic abuse and cover-up of abuse in the catholic church in America. In the words of Sue Blaine&#58; "the extent of the rot is awe-inspiring".
-    - data: 
-        title: Forgotten Fatherland
-        author: Ben Macintyre
-        comment: A portrayal of Nietzsche's sister, who was largely responsible for associating her brother's works with the ideologies of the third reich.
-    - data: 
-        title: Behind the Beautiful Forever
-        author: Katherine Boo
-        comment: A riveting account of life in one of Mumbai's slums. Its ending left me aching for real closure.
-    - data: 
-        title: Guns Up! A Firsthand Account of the Vietnam War
-        author: Johnnie Clark
-        comment: A vivid and captivating portrayal of the everyday life of a "grunt" during the Vietnam War.
+- data: 
+    comment: Gripping science fiction, set in a grim and realistic future. I had high expectations and Hamilton delivered as usual.
+    link: http://example.org
+    author: Peter F. Hamilton
+    title: Great North Road
+- data: 
+    comment: A great fiction classic, fast paced and with plenty of action.
+    link: dummy
+    author: Arthur Conan Doyle
+    title: The Lost World
+- data: 
+    comment: "An intriguing m\xC3\xA9lange of past and present timelines. A little cheesy at times."
+    link: dummy
+    author: Marina Fiorato
+    title: The Glassblower of Murano
+- data: 
+    comment: Space Opera at its finest&#58; a gripping, long and epic storyline with a multitude of interwoven sub-plots.
+    link: dummy
+    author: Peter F. Hamilton
+    title: Judas Unchained
+- data: 
+    comment: A Hamilton short story, more needn't be said.
+    link: dummy
+    author: Peter F. Hamilton
+    title: If at First
+- data: 
+    comment: Beautiful, intelligent science fiction.
+    link: dummy
+    author: Joe Haldeman
+    title: The Forever War
+- data: 
+    comment: Humorous and witty, it is not without reason Wilde's most popular play.
+    link: dummy
+    author: Oscar Wilde
+    title: The Importance of Being Earnest
+- data: 
+    comment: Shocking and emotional. A thriller, whose unusual approach to storytelling provides a very effective vehicle to convey the protagonists emotions and facilitate empathy by the reader.
+    link: dummy
+    author: Chevy Stevens
+    title: Still Missing
+- data: 
+    comment: German fantasy. Set in an unorthodox universe with a lot of, albeit partially untapped, potential, that made for fast page-turning.
+    link: dummy
+    author: Kai Meyer
+    title: "Die Sturmk\xC3\xB6nige Trilogie"
+- data: 
+    comment: Extremely well-written, thought-provoking science fiction.
+    link: dummy
+    author: Neal Stephenson
+    title: Anathem
+- data: 
+    comment: Great science fiction in a bleak and grim future.
+    link: dummy
+    author: William Gibson
+    title: Neuromancer
+- data: 
+    comment: An exploration of gender and gender-related issues, on a planet where gender is not predetermined or fixed.
+    link: dummy
+    author: Ursula K. Le Guin
+    title: The Left Hand Of Darkness

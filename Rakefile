@@ -27,27 +27,17 @@ desc "Generate an updated reading list"
 task :readinglist do
 	require 'rubygems'
 	require 'jekyll'
-	puts "Regenerating ./readinglist.html"
-	File.open("readinglist.html", 'w+') do |file|
-		default = ''
-		default << <<-HTML
----
-layout: readinglist.html
-title: An annotated reading list
----
-{{ content }}
-		HTML
-	end
-	conf = Jekyll.configuration({})
-	s = Jekyll::Site.new(conf)
-	s.read_layouts
-	readinglist = YAML.load_file("_readings.yml")
-	payload = {"readinglist"=>readinglist}.deep_merge(s.site_payload)
-	p = Jekyll::Page.new(s, s.source, '', 'readinglist.html')
-	p.render(payload, s.layouts)
-	p.write(s.source)
-	puts "Updated ./readinglist.html generated"
+	# see test.rb
 end
+
+desc "Generate updated tag lists"
+task :tasks do
+	require 'rubygems'
+	require 'jekyll'
+	# see test.rb
+end
+
+
 
 desc "Run jekyll locally"
 task :jekyll do

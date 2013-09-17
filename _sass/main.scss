@@ -121,12 +121,29 @@ span.placeholder {
     min-width: $extra-huge;
 }
 
+strong {
+    font-weight: bold;
+}
+
 article {
     p {
         padding-bottom: 0.5em;
     }
     #{nest("ul, ol, div,", "+ p")} {
         padding-top: 0.5em;
+    }
+
+    h3 {
+        display: block;
+        padding-bottom: 0.5em;
+    }
+
+    footer.notice {
+        text-align: center;
+    }
+
+    section {
+        margin-bottom: 1em;
     }
 
     header {
