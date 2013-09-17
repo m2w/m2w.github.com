@@ -3,3 +3,8 @@ layout: base
 ---
 <h2>{{ page.title }}</h2>
 
+{{tag}}
+
+{% for post in p %}
+{{post.data}}
+{% endfor %}
