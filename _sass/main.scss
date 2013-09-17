@@ -25,6 +25,27 @@ body {
     */
 }
 
+div#nav {
+    margin: 1em 0 2em;
+    display: inline-table;
+    width: 100%;
+
+    #nav-left {
+        display: table-cell;
+        width: 55%;
+    }
+
+    #nav-right {
+        display: table-cell;
+        margin-left:auto;
+        width: 40%;
+
+        a + a {
+            padding-left: 1em;
+        }
+    }
+}
+
 div#container {
     width: 600px;
     margin: 1em auto 1em auto;
@@ -38,17 +59,20 @@ div#pagination {
 
 h1 {
     font-size: $huge;
-    margin: 0.2em 0 0.2em;
+    display: inline;
     font-weight: bold;
-    padding-bottom: 1em;
 }
 
 h2 {
     font-size: $extra-large;
     margin: 0.2em 0 0.2em;
-    text-indent: -1em;
+    text-indent: -0.8em;
 }
 
+h3 {
+    font-size: $big;
+    display: inline;
+}
 small {
     font-size: smaller;
 }
@@ -63,6 +87,10 @@ ul {
 
 ol {
     list-style: lower-alpha;
+}
+
+ol.foot-notes {
+    list-style: decimal;
 }
 
 a {
@@ -80,8 +108,17 @@ a {
     }
 }
 
+span.whitespace {
+    width: 100%;
+    display:inline-table;
+}
+
 .huge {
     font-size: $extra-huge;
+}
+span.placeholder {
+    /*font-size: $extra-huge;*/
+    min-width: $extra-huge;
 }
 
 article {
@@ -94,10 +131,30 @@ article {
 
     header {
         margin-bottom: 1em;
+        display: table-row;
 
-        small {
+        span.date {
             font-style: italic;
-            /* TODO: right-aligned without float */
-        }       
+            display: table-cell;
+            font-size: smaller;
+            text-indent: -4em;
+            width: 0px;
+        }
+        a {
+            font-weight: normal;
+        }
+
+        h2 {
+            display: table-cell;
+            text-indent: 0;
+        }
+
+        + p {
+            margin-top: 1em;
+        }
     }
+}
+
+hr {
+    margin: 1em 0 2em;
 }

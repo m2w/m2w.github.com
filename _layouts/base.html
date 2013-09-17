@@ -9,8 +9,17 @@
     <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
     <div id="container">
-        <a href="/"><h1>{{ site.title }}</h1></a>
+    <div id="nav">
+        <div id="nav-left">
+            <a href="/"><h1>{{ site.title }}</h1></a>
+        </div>
+        <div id="nav-right">
+            <a href="/about"><h3># About</h3></a>
+            <a href="/readinglist"><h3># Reading List</h3></a>
+        </div>
+    </div>
         {{content}}
     </div>
 </body>

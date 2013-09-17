@@ -5,12 +5,12 @@ layout: base
 {% for post in paginator.posts %}
 <article>
     <header>
-        <h2><a href="{{ post.url }}" class="permalink">#</a> {{ post.title }}</h2>
-        <small>— {{ post.date | date_to_long_string }}</small>
-        <small>{% if post.tags and post.tags != empty %}{{ post.tags | array_to_sentence_string }}{% endif %}</small>
+        <span class="date">{{ post.date | date: '%x' }}</span>
+        <h2><a href="{{ post.url }}" class="permalink">{{ post.title }}</a></h2>
     </header>
     {{ post.content }}
 </article>
+{% unless forloop.last %}<hr>{% endunless %}
 {% endfor %}
 {% if paginator.total_posts > site.paginate %}
     <div id="pagination">
@@ -23,6 +23,7 @@ layout: base
             <a href="{{ prev }}" class="huge">≪</a>
         {% endif %}
         {% if paginator.next_page %}
+            {% unless paginator.previous_page %}<span class="placeholder">&nbsp;</span>{% endunless %}
             <a href="/page{{ paginator.next_page }}" class="huge">≫</a>
         {% endif %}
     </div>

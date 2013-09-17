@@ -3,8 +3,8 @@ layout: base
 ---
 <article>
     <header>
-        <h2><a href="{{ page.url }}" class="permalink">#</a> {{ page.title }}</h2>
-        <small>— {{ page.date | date_to_long_string }}</small>
+        <span class="date">{{ page.date | date: '%x' }}</span>
+        <h2><a href="{{ page.url }}" class="permalink">{{ page.title }}</a></h2>
         <small>{% if page.tags and page.tags != empty %}{{ page.tags | array_to_sentence_string }}{% endif %}</small>
     </header>
     {{ content }}
