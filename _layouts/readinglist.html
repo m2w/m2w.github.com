@@ -1,0 +1,23 @@
+---
+layout: base
+---
+<article>
+    <header>
+        <h2>{{ page.title }}</h2>
+    </header>
+        {% for collection in readinglist %}
+            {% for item in collection %}
+                {% if forloop.first %}
+                    <h3>{{item}}</h3>
+                {% else %}
+                    {% for details in item %}
+                        <dl>
+                            <dt><strong>{{ details.data.title }}</strong> - <small>{{ details.data.author }}</dt>
+                            <dd>{{ details.data.comment }}</dd>
+                        </dl>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    <footer>Note that all links are Amazon affiliate links.</footer>
+<article>

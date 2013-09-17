@@ -17,7 +17,7 @@ dedicated-pages:
 
 # config
 permalink: /:year/:month/:day/:title
-exclude: ["CNAME", "config.rb", "talaria"]
+exclude: ["CNAME", "config.rb", "talaria", "Rakefile"]
 markdown: redcarpet
 paginate: 2
 server_port: 8001
