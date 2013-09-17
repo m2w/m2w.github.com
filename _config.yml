@@ -7,14 +7,6 @@ author:
     twitter_url: https://twitter.com/tibidat
     google_plus_url: https://plus.google.com/u/0/113461142832340811357/
 
-dedicated-pages:
-    - details:
-        title: About
-        url: /about.html
-    - details:
-        title: Readinglist
-        url: /readinglist.html
-
 # config
 permalink: /:year/:month/:day/:title
 exclude: ["CNAME", "config.rb", "talaria", "Rakefile"]

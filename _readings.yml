@@ -1,6 +1,7 @@
 belletristic: 
     - data: 
         title: Great North Road
+        link: http://example.org
         author: Peter F. Hamilton
         comment: Gripping science fiction, set in a grim and realistic future. I had high expectations and Hamilton delivered as usual.
     - data:

@@ -31,13 +31,12 @@ task :readinglist do
 	File.open("readinglist.html", 'w+') do |file|
 		default = ''
 		default << <<-HTML
-		---
-		layout: readinglist.html
-		title: An annotated reading list
-		---
-		{{ content }}
+---
+layout: readinglist.html
+title: An annotated reading list
+---
+{{ content }}
 		HTML
-		end
 	end
 	conf = Jekyll.configuration({})
 	s = Jekyll::Site.new(conf)

@@ -5,6 +5,7 @@ layout: base
     <header>
         <h2>{{ page.title }}</h2>
     </header>
+    {{context}}
         {% for collection in readinglist %}
             {% for item in collection %}
                 {% if forloop.first %}
@@ -12,7 +13,7 @@ layout: base
                 {% else %}
                     {% for details in item %}
                         <dl>
-                            <dt><strong>{{ details.data.title }}</strong> - <small>{{ details.data.author }}</dt>
+                            <dt><strong>{{ details.data.title }}</strong> - <small>{{ details.data.author }}</small></dt>
                             <dd>{{ details.data.comment }}</dd>
                         </dl>
                     {% endfor %}
