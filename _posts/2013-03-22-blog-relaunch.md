@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Blog relaunch
-tags: [jekyll]
+tags: [jekyll, blog]
 ---
 I just moved my blog to github. There are two main reasons for the move: First, it moves another "critical" component off my server and into the cloud. This allows me to experiment more on my server with less fear of consequences. Second, I have been wanting to give [jekyll](https://github.com/mojombo/jekyll) a try for a while now, and while this isn't a reason to move to github per se, my current deployment mechanic is lacking, and github nicely streamlines it for me. A further addition that is currently in planning stage is to add a github-based commenting system to the blog.
 

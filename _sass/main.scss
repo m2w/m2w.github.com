@@ -43,6 +43,10 @@ div#nav {
         a + a {
             padding-left: 1em;
         }
+
+        a {
+            font-size: $big;
+        }
     }
 }
 
@@ -57,6 +61,40 @@ div#pagination {
     padding-top: 1em;
 }
 
+span.placeholder {
+    font-size: $extra-huge;
+    font-weight: bold;
+    color: grey;
+}
+
+.huge {
+    font-size: $extra-huge;
+}
+
+.small {
+    font-size: smaller;
+}
+
+.em {
+    font-style: italic;
+}
+
+div.table {
+    display: table;
+}
+
+div.row {
+    display: table-row;
+}
+
+div.cell {
+    display: table-cell;
+}
+
+.left {
+    padding-right: 1em;
+}
+
 h1 {
     font-size: $huge;
     display: inline;
@@ -65,16 +103,24 @@ h1 {
 
 h2 {
     font-size: $extra-large;
-    margin: 0.2em 0 0.2em;
-    text-indent: -0.8em;
+    margin-bottom: 1em;
 }
 
 h3 {
     font-size: $big;
-    display: inline;
+    margin-bottom: 1em;
 }
+
 small {
     font-size: smaller;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
 }
 
 ul, ol {
@@ -87,10 +133,9 @@ ul {
 
 ol {
     list-style: lower-alpha;
-}
-
-ol.foot-notes {
-    list-style: decimal;
+    .foot-notes {
+        list-style: decimal;
+    }
 }
 
 a {
@@ -108,35 +153,42 @@ a {
     }
 }
 
-span.whitespace {
-    width: 100%;
-    display:inline-table;
-}
-
-.huge {
-    font-size: $extra-huge;
-}
-span.placeholder {
-    font-size: $extra-huge;
-    font-weight: bold;
-    color: grey;
-}
-
-strong {
-    font-weight: bold;
+hr {
+    margin: 1em 0 2em;
 }
 
 article {
+    header {
+        margin-bottom: 1em;
+
+        span.date {
+            font-style: italic;
+            display: table-cell;
+            font-size: smaller;
+            text-indent: -4em;
+            width: 0px;
+        }
+
+        a {
+            font-weight: normal;
+        }
+
+        h2 {
+            display: table-cell;
+            margin: 0;
+        }
+
+        + p {
+            margin-top: 1em;
+        }
+    }
+
     p {
         padding-bottom: 0.5em;
     }
+
     #{nest("ul, ol, div,", "+ p")} {
         padding-top: 0.5em;
-    }
-
-    h3 {
-        display: block;
-        padding-bottom: 0.5em;
     }
 
     footer.notice {
@@ -150,33 +202,4 @@ article {
     section {
         margin-bottom: 1em;
     }
-
-    header {
-        margin-bottom: 1em;
-        display: inline;
-
-        span.date {
-            font-style: italic;
-            display: table-cell;
-            font-size: smaller;
-            text-indent: -4em;
-            width: 0px;
-        }
-        a {
-            font-weight: normal;
-        }
-
-        h2 {
-            display: table-cell;
-            text-indent: 0;
-        }
-
-        + p {
-            margin-top: 1em;
-        }
-    }
-}
-
-hr {
-    margin: 1em 0 2em;
 }

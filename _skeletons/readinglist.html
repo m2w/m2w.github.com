@@ -8,9 +8,9 @@ title: A reading list
     {% for category in readinglist %}
         <section>
             <header>
-                <h3>{{ category[0] | capitalize }}</h3>
+                <h3><em>{{ category.name | capitalize }}</em></h3>
             </header>
-            {% for entry in category[1] %}
+            {% for entry in category.entries %}
                 <dl>
                     <dt><strong><a href="{{ entry.link }}">{{ entry.title }}</a></strong> — {{ entry.author }}</dt>
                     <dd><small>{{ entry.comment }}</small></dd>
