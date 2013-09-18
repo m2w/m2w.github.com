@@ -117,8 +117,9 @@ span.whitespace {
     font-size: $extra-huge;
 }
 span.placeholder {
-    /*font-size: $extra-huge;*/
-    min-width: $extra-huge;
+    font-size: $extra-huge;
+    font-weight: bold;
+    color: grey;
 }
 
 strong {
@@ -142,13 +143,17 @@ article {
         text-align: center;
     }
 
+    footer.notes {
+        font-size: smaller;
+    }
+
     section {
         margin-bottom: 1em;
     }
 
     header {
         margin-bottom: 1em;
-        display: table-row;
+        display: inline;
 
         span.date {
             font-style: italic;

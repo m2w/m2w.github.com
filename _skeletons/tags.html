@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<h2>Posts tagged <strong>{{ tag }}</strong></h2>
+<h2>Latest posts grouped by tag</h2>
 
 {% for post in p %}
     {{post.date | date: '%x'}} - <a href="{{post.url}}">{{post.title}}</a>
