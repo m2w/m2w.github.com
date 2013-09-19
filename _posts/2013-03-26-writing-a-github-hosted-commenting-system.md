@@ -3,7 +3,7 @@ layout: post
 title: Writing a github hosted commenting system
 tags: [github, jQuery, blog]
 ---
-I just pushed the [beta version of my commenting system](https://github.com/m2w/talaria) for this blog to github. Code-named talaria, it provides commenting for any file-identifiable[^1] content via github commit message comments.
+I just pushed the [beta version of my commenting system](https://github.com/m2w/talaria) for this blog to github. Code-named talaria, it provides commenting for any file-identifiable [[^1]] content via github commit message comments.
 
 talaria works based on a number of assumptions:
 
@@ -31,7 +31,7 @@ A liquid template that enables usage of talaria would look structurally similar 
 {% endraw %}
 {% endhighlight %}
 
-The actual functionality is very simple and the majority of the work is handled by the github API, but here's a breakdown: talaria extracts all permalinks on the page. These are converted to the respective paths to the content source files. It then iterates over all files, querying the github API for all commits related to each file. For each commit it then retrieves the commit-comments. Retrieved data is cached locally[^2] (if supported by the browser) using `sessionStorage`. The next steps entail sorting the comments based on their `updated_at` field before rendering them using the template snippet. Finally `href` of the button to add a comment is set and, if the current URL indicates paginated content, the comments are initially left hidden and an appropriate "view comments" link is displayed instead, if not, the comments are displayed.
+The actual functionality is very simple and the majority of the work is handled by the github API, but here's a breakdown: talaria extracts all permalinks on the page. These are converted to the respective paths to the content source files. It then iterates over all files, querying the github API for all commits related to each file. For each commit it then retrieves the commit-comments. Retrieved data is cached locally [[^2]] (if supported by the browser) using `sessionStorage`. The next steps entail sorting the comments based on their `updated_at` field before rendering them using the template snippet. Finally `href` of the button to add a comment is set and, if the current URL indicates paginated content, the comments are initially left hidden and an appropriate "view comments" link is displayed instead, if not, the comments are displayed.
 
 Getting around the XSS limitations with the github API is thankfully very simple as they offer support for CORS. All it takes is to [register an OAuth application](https://github.com/settings/applications/new) for the domain and from there everything just works&trade;.
 

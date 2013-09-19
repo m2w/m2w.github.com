@@ -3,28 +3,45 @@ layout: base
 ---
 <h3>Latest posts grouped by tag</h3>
 
-{% for tag in tag_data %}
-	<h3><a href="/tags/{{tag.name}}.html">{{tag.name}}</a></h3>
-	{% for post in tag.posts %}
-	    <div class="table">
-		    <div class="row">
-				<div class="cell small em left">{{post.date | date: '%x'}}</div>
-				<div class="cell right">
-					<a href="{{post.url}}">{{post.title}}</a><br>
-				</div>
-			</div>
-			<div class="row">
-				<div class="cell left"></div>
-				<div class="cell right">
-				    {% if post.tags.size > 1 %}<small>Additionally tagged as:&nbsp;
-					    {% for t in post.tags %}
-						    {% unless t == tag %}
-						        <a href="/tags/{{t}}.html">{{t}}</a>{% case forloop.rindex0 %}{% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
-							{% endunless %}
-						{% endfor %}</small>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-	{% endfor %}
+<div id="cloud">
+    {% for tag in tag_cloud %}
+        <a href="/tags/{{ tag.name }}.html" id="{{ tag.name }}-view" class="weight-{{ tag.weight }}">{{ tag.name }}</a>
+    {% endfor %}
+</div>
+
+{% for tag in tag_cloud %}
+    {% for post in tag.posts %}
+        <div class="table hidden" id="{{ tag.name }}-posts">
+            <div class="row">
+                <div class="cell small em left">{{ post.date | date: '%x'}}</div>
+                <div class="cell right">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </div>
+            </div>
+            {% if post.tags.size > 1 %}
+                <div class="row">
+                    <div class="cell left"></div>
+                    <div class="cell right">
+                        <small>Additionally tagged as:&nbsp;
+                            {% for t in post.tags %}
+                                {% unless t == tag %}
+                                    <a href="/tags/{{ t }}.html">{{ t }}</a>{% case forloop.rindex0 %}{% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
+                                {% endunless %}
+                            {% endfor %}</small>
+                    </div>
+                </div>
+            {% endif %}
+            {% if forloop.last and tag.post_count > site.tagcloud.post_limit %}
+                <div class="row">
+                    <div class="cell left"></div>
+                    <div class="cell right">
+                        <a href="/tags/{{ tag.name }}.html">View all posts tagged {{ tag.name }}</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
 {% endfor %}
+<script type="text/javascript">
+    {% include tags.js %}
+</script>

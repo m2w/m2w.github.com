@@ -10,13 +10,19 @@
 </head>
 <body>
     <div id="container">
-        <div id="nav">
-            <div id="nav-left">
-                <h1><a href="/">{{ site.title }}</a></h1>
+        <div id="header">
+            <div id="nav">
+                <div id="nav-left">
+                    <h1><a href="/">{{ site.title }}</a></h1>
+                </div>
+                <div id="nav-right">
+                    <a href="/about.html"># About</a>
+                    <a href="/tags/"># Tags</a>
+                    <a href="/readinglist.html"># Reading List</a>
+                </div>
             </div>
-            <div id="nav-right">
-                <a href="/about.html"># About</a>
-                <a href="/readinglist.html"># Reading List</a>
+            <div id="tagline">
+                {{ site.tagline }}
             </div>
         </div>
 {{content}}

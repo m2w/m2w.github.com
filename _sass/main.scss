@@ -10,13 +10,13 @@ $huge: 2em;
 $extra-large: 1.8em;
 $large: 1.5em;
 $big: 1.3em;
+$bigish: 1.15em;
 /* Color Defs */
 $red: #BA1204;
 $dark-red: #A31105;
 $light-red: #CA1000;
 
 body {
-    /*line-height: 1.1em;*/
     /*
     TODO: come up with a way to keep the logo centered on visible content
     background-image: url('/static/img/logo.png');
@@ -25,28 +25,34 @@ body {
     */
 }
 
-div#nav {
+div#header {
     margin: 1em 0 2em;
-    display: inline-table;
     width: 100%;
 
-    #nav-left {
-        display: table-cell;
-        width: 55%;
+    #nav {
+        margin-bottom: 1em;
+
+        #nav-left {
+            display: table-cell;
+            width: 50%;
+        }
+
+        #nav-right {
+            display: table-cell;
+            width: 45%;
+
+            a + a {
+                padding-left: 0.5em;
+            }
+
+            a {
+                font-size: $bigish;
+            }
+        }
     }
 
-    #nav-right {
-        display: table-cell;
-        margin-left:auto;
-        width: 40%;
-
-        a + a {
-            padding-left: 1em;
-        }
-
-        a {
-            font-size: $big;
-        }
+    #tagline {
+        text-align: center;
     }
 }
 
@@ -59,6 +65,19 @@ div#pagination {
     width: 4em;
     margin: auto;
     padding-top: 1em;
+}
+
+div#cloud {
+    padding: 1em;
+
+    /*top 5%*/
+    a.weight-4 { font-size: $big; }
+    /*top 5-20%*/
+    a.weight-3 { font-size: $bigish; }
+    /*top 20-50%*/
+    a.weight-2 { font-size: inherit; }
+    /*all others*/
+    a.weight-1 { font-size: smaller; } 
 }
 
 span.placeholder {
@@ -79,8 +98,14 @@ span.placeholder {
     font-style: italic;
 }
 
+
+
 div.table {
     display: table;
+}
+
+div.table.hidden {
+    display: none;
 }
 
 div.row {
@@ -89,6 +114,10 @@ div.row {
 
 div.cell {
     display: table-cell;
+}
+
+div.footnotes ol {
+    list-style: decimal;
 }
 
 .left {
@@ -133,9 +162,6 @@ ul {
 
 ol {
     list-style: lower-alpha;
-    .foot-notes {
-        list-style: decimal;
-    }
 }
 
 a {

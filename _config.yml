@@ -1,5 +1,9 @@
 title: 'food for thought'
-tagline: spawn(programming, apply, [for_fun, for_profit])
+tagline: "Hi I'm <a href='/about.html'>Moritz</a>.<br> This is where I blog on programming, travel and photography."
+
+tagcloud:
+    post_limit: 5
+
 author:
     name: Moritz
     email: moritz@tibidat.com
