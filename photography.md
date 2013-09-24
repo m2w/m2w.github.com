@@ -13,18 +13,18 @@ The hardware is completed by two Hoya filters, a [UV Filter](http://www.hoyafilt
 
 Maintenance and cleaning is done with a Zeiss Lens Cleaning Kit and the [Giotto's Super Rocket](http://www.giottos.com/pro_view.aspx?nid=8&typeid=77), which I am a little underwhelmed with.
 
-For dedicated photo-excursions or for suit-case traveling I carry the entire setup in a [Lowepro Fastpack AW 250](http://store.lowepro.com/fastpack-250), which comfortably fits my entire setup. For more adventurous traveling, I usually restrict myself to just one lens and the bare cleaning necessities which fit perfectly into my [Case Logic SLR Zoom Holster](http://www.caselogic.com/en-us/us/products/camera-cases/view-all/slr-zoom-holster-_-slrc_-_201_-_black).
+For dedicated photo-excursions or for suitcase traveling I carry the entire setup in a [Lowepro Fastpack AW 250](http://store.lowepro.com/fastpack-250), which comfortably fits everything. For more adventurous traveling, I usually restrict myself to just one lens and the bare cleaning necessities which fit perfectly into my [Case Logic SLR Zoom Holster](http://www.caselogic.com/en-us/us/products/camera-cases/view-all/slr-zoom-holster-_-slrc_-_201_-_black).
 
 Post production is done in [Aperture](http://www.apple.com/aperture/) on my MBA.
 
-Overall I am very happy with my current setup. Eventually, I aim to add a dedicated macro lens - my current favorite being the [Nikkor Micro 105mm f/2.8 VR](http://imaging.nikon.com/lineup/lens/specoalpurpose/micro/af-s_vr_micro-nikkor_105mmf_28_if/index.htm) - and grab the [Nik Collection](http://www.google.com/nikcollection/).
+Overall I am very happy with my current setup. Eventually, I aim to add a dedicated macro lens (my current favorite being the [Nikkor Micro 105mm f/2.8 VR](http://imaging.nikon.com/lineup/lens/specoalpurpose/micro/af-s_vr_micro-nikkor_105mmf_28_if/index.htm)), a decent uni- or tripod and the [Nik Collection](http://www.google.com/nikcollection/).
 
 You can find a selection of my photos on [flickr]({{ site.author.flickr }}).
 
 
 ##My workflow
 
-Generally I tend to either overshoot or undershoot heavily. Undershooting is something I am still working on, there are a number of times I retrospectively wish I had taken pictures, it is mostly a question of motivation. Overshooting, however, is something that Aperture allows me to fix quickly.
+Generally, I tend to either overshoot or undershoot heavily. Undershooting is something I am still working on, there are a number of times I retrospectively wish I had taken pictures, it is mostly a question of motivation. Overshooting, however, is something that Aperture allows me to fix quickly.
 
 After a session (which might last for a couple of days, if I'm on a hike for example), I import all new RAWs into Aperture. To conserve precious hard-drive space on my MBA, I only work with referenced originals, unless I am on a really long trip without access to my NAS and don't carry enough SD cards to last me for the rest of the trip. On the NAS all originals are stored in RAID1 and are organized in the standard `/year/month/day` folder hierarchy.
 

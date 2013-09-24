@@ -38,6 +38,7 @@ div#header {
     #tagline {
         text-align: center;
         display: none;
+        padding-top: 1rem;
     }
 }
 
@@ -53,7 +54,8 @@ div#pagination {
 }
 
 div#cloud {
-    padding: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
+    text-align: center;
 
     /*top 5%*/
     a.weight-4 { font-size: $big; }
@@ -83,20 +85,27 @@ span.placeholder {
     font-style: italic;
 }
 
+.cell {
+    display: table-cell;
+}
+
+.indented {
+    text-indent: -1rem;
+    width: 0;
+    vertical-align: middle;
+    font-size: smaller;
+}
+
 div.table {
     display: table;
 }
 
-div.table.hidden {
+div.hidden {
     display: none;
 }
 
 div.row {
     display: table-row;
-}
-
-div.cell {
-    display: table-cell;
 }
 
 div.footnotes ol {
@@ -204,6 +213,10 @@ article {
 
     footer.notes {
         font-size: smaller;
+    }
+
+    section header {
+        padding-bottom: 1rem;
     }
 
     section + section {

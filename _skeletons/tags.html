@@ -5,13 +5,15 @@ layout: base
 
 <div id="cloud">
     {% for tag in tag_cloud %}
-        <a href="/tags/{{ tag.name }}.html" id="{{ tag.name }}-view" class="weight-{{ tag.weight }}">{{ tag.name }}</a>
+        <a href="/tags/{{ tag.name }}.html" id="{{ tag.name }}-view" class="weight-{{ tag.weight }} tag-name">{{ tag.name }}</a>
     {% endfor %}
 </div>
-
+<div id="tag-data-header" class="hidden">
+    <h3>Most recent posts tagged <em><span id="tag-name-placeholder">placeholder</span></em></h3>
+</div>
 {% for tag in tag_cloud %}
     {% for post in tag.posts %}
-        <div class="table hidden" id="{{ tag.name }}-posts">
+        <div id="{{ tag.name }}-posts" class="table hidden">
             <div class="row">
                 <div class="cell small em left">{{ post.date | date: '%x'}}</div>
                 <div class="cell right">

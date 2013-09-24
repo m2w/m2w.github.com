@@ -8,7 +8,8 @@ title: A reading list
     {% for category in readinglist %}
         <section>
             <header>
-                <h3><em>{{ category.name | capitalize }}</em></h3>
+                <span class="cell indented">&#x27A4;</span>
+                <h3 class="cell"><em>{{ category.name | capitalize }}</em></h3>
             </header>
             {% for entry in category.entries %}
                 <dl>
