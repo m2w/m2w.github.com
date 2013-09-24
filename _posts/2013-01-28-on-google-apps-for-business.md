@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On Google Apps for Business
-tags: [Google, email]
+tags: [google, email]
 ---
 
 Are you running your own mailserver but don't want to deal with all the hassle and/or aren't satisfied with the current state of email web frontends? The solution might very well be Google Apps.
@@ -10,7 +10,7 @@ I used to run a Postfix & Dovecot setup. It ran rock solid for almost 2 years. M
 
 The setup had no failover. Had the server gone down, my primary email addresses would have been unreachable until fixed. Additionally, fully configuring and maintaining a mail server requires both time and in-depth domain knowledge. It also requires, and this is the main reason I started looking for an alternative, that the administrator be available and reachable.
 
-Since arriving in Japan, constant internet access is no longer a guarantee. This effectively rendered my emergency plan[^1] void. Worst case scenario: Not even realizing that the server is down for a couple of days. To compound the issue, more often than not, connectivity is shaky. This is already frustrating for day-to-day interaction with the server, but in an emergency it would just add unnecessary stress.
+Since arriving in Japan, constant Internet access is no longer a guarantee. This effectively rendered my emergency plan[^1] void. Worst case scenario: Not even realizing that the server is down for a couple of days. To compound the issue, more often than not, connectivity is shaky. This is already frustrating for day-to-day interaction with the server, but in an emergency it would just add unnecessary stress.
 
 As is, my current situation tipped the scales in favor of an alternative. I had a look at the big three: [Gmail](http://www.google.com/enterprise/apps/business/), [Yahoo Mail](http://smallbusiness.yahoo.com/email/) and [Outlook.com](http://office.microsoft.com/en-us/exchange/email-hosting-exchange-online-FX103739072.aspx). Out of these, Google simply offers the most (while also being the cheapest for my use-case). To me, the benefits of outsourcing email were:
 

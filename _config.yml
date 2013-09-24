@@ -1,5 +1,5 @@
 title: 'food for thought'
-tagline: "Hi I'm <a href='/about.html'>Moritz</a>.<br> This is where I blog on programming, travel and photography."
+tagline: "Hi I'm <a href='/about.html'>Moritz</a>.<br> This is where I blog about programming, travel and photography."
 
 tagcloud:
     post_limit: 5
@@ -7,9 +7,9 @@ tagcloud:
 author:
     name: Moritz
     email: moritz@tibidat.com
-    github_url: https://github.com/m2w
-    twitter_url: https://twitter.com/tibidat
-    google_plus_url: https://plus.google.com/u/0/113461142832340811357/
+    github: https://github.com/m2w
+    twitter: https://twitter.com/tibidat
+    google_plus: https://plus.google.com/u/0/113461142832340811357/
 
 # config
 permalink: /:year/:month/:day/:title

@@ -1,30 +1,30 @@
 ---
 layout: post
 title: Notes on bash scripting
-tags: [bash]
+tags: [bash, reference]
 ---
-I recently skimmed through the [Bash Guide](http://mywiki.wooledge.org/BashGuide/). What follows are a couple of hints extracted for reference:
+I recently skimmed through the [Bash Guide](http://mywiki.wooledge.org/BashGuide/); some extracts for reference.
 
-### Conventions
+### Scripting Conventions
 
 + use `$( cmd )` instead of ``cmd``
-+ use `exit` with an exit code > 0 to signal non-standard programm termination
++ use `exit` with an exit code > 0 to signal non-standard program termination
 + `{} < file` uses `file` for executing all statements inside the group
-+ use `[[` to test for equality (ALWAYS!)
-+ have a dedicated, version controlled directory for (bash) scripts where all scripts are symlinked and add it to the `$PATH`
++ *always* use `[[` to test for equality
++ have a dedicated, version controlled directory for (bash) scripts where all scripts are symlinked and add it to `$PATH`
 
 ### Parameter expansion
 {% highlight bash %}
-${parameter:-word}  # Use Default Value. If 'parameter' is unset or null, the expansion of 'word' is substituted. Otherwise, the value of 'parameter' is substituted.
+${parameter:-word}  # Provide Default Value. If 'parameter' is unset or null, the expansion of 'word' is substituted. Otherwise, the value of 'parameter' is substituted.
 ${parameter:=word}  # Assign Default Value. If 'parameter' is unset or null, the expansion of 'word' is assigned to 'parameter'. The value of 'parameter' is then substituted.
-${parameter:+word}  # Use Alternate Value. If 'parameter' is null or unset, nothing is substituted, otherwise the expansion of 'word' is substituted.
+${parameter:+word}  # Use Alternate Value. If 'parameter' is unset or null, nothing is substituted, otherwise the expansion of 'word' is substituted.
 ${parameter:offset:length}  # Substring Expansion. Expands to up to 'length' characters of 'parameter' starting at the character specified by 'offset' (0-indexed). If ':length' is omitted, go all the way to the end. If 'offset' is negative (use parentheses!), count backward from the end of 'parameter' instead of forward from the beginning.
 ${#parameter} # The length in characters of the value of 'parameter' is substituted.
 ${parameter#pattern}  # The 'pattern' is matched against the beginning of 'parameter'. The result is the expanded value of 'parameter' with the shortest match deleted.
 ${parameter##pattern} # As above, but the longest match is deleted.
 ${parameter%pattern}  # The 'pattern' is matched against the end of 'parameter'. The result is the expanded value of 'parameter' with the shortest match deleted.
 ${parameter%%pattern} # As above, but the longest match is deleted.
-${parameter/pat/string}  # Results in the expanded value of 'parameter' with the first (unanchored) match of 'pat' replaced by 'string'.
+${parameter/pat/string}  # Results in the expanded value of 'parameter' with the first match of 'pat' replaced by 'string'.
 ${parameter//pat/string} # As above, but every match of 'pat' is replaced.
 {% endhighlight %}
 
@@ -71,22 +71,22 @@ STRING = STRING  # True if the first string is identical to the second.
 STRING != STRING # True if the first string is not identical to the second.
 STRING < STRING  # True if the first string sorts before the second.
 STRING > STRING  # True if the first string sorts after the second.
-EXPR -a EXPR # True if both expressions are true (logical AND).
-EXPR -o EXPR # True if either expression is true (logical OR).
-! EXPR # Inverts the result of the expression (logical NOT).
+STRING = (or ==) PATTERN # True if the string matches the glob pattern.
+STRING =~ REGEX # True if the string matches the regex pattern.
 INT -eq INT # True if both integers are identical.
 INT -ne INT # True if the integers are not identical.
 INT -lt INT # True if the first integer is less than the second.
 INT -gt INT # True if the first integer is greater than the second.
 INT -le INT # True if the first integer is less than or equal to the second.
 INT -ge INT # True if the first integer is greater than or equal to the second.
-STRING = (or ==) PATTERN # Not string comparison like with [ (or test), but pattern matching is performed. True if the string matches the glob pattern.
-STRING =~ REGEX # True if the string matches the regex pattern.
-( EXPR ) # Parantheses can be used to change the evaluation precedence.
-EXPR && EXPR # Much like the '-a' operator of test, but does not evaluate the second expression if the first already turns out to be false.
-EXPR || EXPR # Much like the '-o' operator of test, but does not evaluate the second expression if the first already turns out to be true.
+EXPR -a EXPR # True if both expressions are true (logical AND).
+EXPR -o EXPR # True if either expression is true (logical OR).
+! EXPR   # Inverts the result of the expression (logical NOT).
+( EXPR ) # Parentheses can be used to change the evaluation precedence.
+EXPR && EXPR # Much like the '-a' operator of test, but with short-circuit logic.
+EXPR || EXPR # Much like the '-o' operator of test, but with short-circuit logic.
 {% endhighlight %}
 
 ### Misc
 
-{% highlight bash %}. ./myscript # executes myscript in the current shell env! (and can hence modify it!){% endhighlight %}
+{% highlight bash %}. ./myscript # executes myscript in the current shell env (and can hence modify it!){% endhighlight %}

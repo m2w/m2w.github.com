@@ -1,20 +1,6 @@
 @import "_base";
 @import "_code";
-/*
-@import "_talaria";
-*/
-
-/* Font Defs */
-$extra-huge: 2.5em;
-$huge: 2em;
-$extra-large: 1.8em;
-$large: 1.5em;
-$big: 1.3em;
-$bigish: 1.15em;
-/* Color Defs */
-$red: #BA1204;
-$dark-red: #A31105;
-$light-red: #CA1000;
+/*@import "_talaria";*/
 
 body {
     /*
@@ -26,12 +12,10 @@ body {
 }
 
 div#header {
-    margin: 1em 0 2em;
     width: 100%;
+    padding-bottom: 1.5rem;
 
     #nav {
-        margin-bottom: 1em;
-
         #nav-left {
             display: table-cell;
             width: 50%;
@@ -42,7 +26,7 @@ div#header {
             width: 45%;
 
             a + a {
-                padding-left: 0.5em;
+                padding-left: 0.5rem;
             }
 
             a {
@@ -53,22 +37,23 @@ div#header {
 
     #tagline {
         text-align: center;
+        display: none;
     }
 }
 
 div#container {
     width: 600px;
-    margin: 1em auto 1em auto;
+    margin: 1rem auto 1rem auto;
 }
 
 div#pagination {
-    width: 4em;
+    width: 4rem;
     margin: auto;
-    padding-top: 1em;
+    padding-top: 1rem;
 }
 
 div#cloud {
-    padding: 1em;
+    padding: 1rem;
 
     /*top 5%*/
     a.weight-4 { font-size: $big; }
@@ -98,8 +83,6 @@ span.placeholder {
     font-style: italic;
 }
 
-
-
 div.table {
     display: table;
 }
@@ -121,7 +104,7 @@ div.footnotes ol {
 }
 
 .left {
-    padding-right: 1em;
+    padding-right: 1rem;
 }
 
 h1 {
@@ -130,30 +113,30 @@ h1 {
     font-weight: bold;
 }
 
+p {
+    margin-bottom: 0.5rem;
+}
+
 h2 {
     font-size: $extra-large;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 h3 {
     font-size: $big;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
-small {
-    font-size: smaller;
+hr {
+    margin: 1rem 0 1rem;
 }
 
-strong {
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
+dl {
+    margin-bottom: 0.5rem;
 }
 
 ul, ol {
-    padding-left: 1.5em;
+    padding-left: 1.5rem;
 }
 
 ul {
@@ -179,19 +162,17 @@ a {
     }
 }
 
-hr {
-    margin: 1em 0 2em;
-}
-
 article {
+    + article {
+        padding-top: 2rem;
+    }
     header {
-        margin-bottom: 1em;
 
         span.date {
             font-style: italic;
             display: table-cell;
             font-size: smaller;
-            text-indent: -4em;
+            text-indent: -4rem;
             width: 0px;
         }
 
@@ -201,20 +182,20 @@ article {
 
         h2 {
             display: table-cell;
-            margin: 0;
+            margin: 0px;
         }
 
         + p {
-            margin-top: 1em;
+            margin-top: 1rem;
         }
     }
 
-    p {
-        padding-bottom: 0.5em;
+    h3, h4 {
+        margin-top: 1rem;
     }
 
-    #{nest("ul, ol, div,", "+ p")} {
-        padding-top: 0.5em;
+    ul, ol, div {
+        margin-bottom: 0.5rem;
     }
 
     footer.notice {
@@ -225,7 +206,7 @@ article {
         font-size: smaller;
     }
 
-    section {
-        margin-bottom: 1em;
+    section + section {
+        margin-top: 3rem;
     }
 }
