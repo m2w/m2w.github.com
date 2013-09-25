@@ -128,9 +128,8 @@ task :tags do
 		page.write(s.source)
 
 		weight = posts.size.to_f * tag_count / s.posts.size
-
 		tag_cloud.push({"name"=>tag, "posts"=>updated_posts[0,5], 
-			"post_count"=>posts.size, "weight"=>weight})
+			"weight"=>weight})
 	end
 
 	tag_cloud = tag_cloud.sort{|d1, d2| 

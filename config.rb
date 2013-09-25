@@ -6,6 +6,4 @@ javascripts_dir = "static/js"
 
 output_style = :compressed
 
-# relative_assets = true
-
 line_comments = false

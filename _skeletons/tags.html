@@ -12,8 +12,8 @@ layout: base
     <h3>Most recent posts tagged <em><span id="tag-name-placeholder">placeholder</span></em></h3>
 </div>
 {% for tag in tag_cloud %}
-    {% for post in tag.posts %}
-        <div id="{{ tag.name }}-posts" class="table hidden">
+    <div id="{{ tag.name }}-posts" class="table hidden">
+        {% for post in tag.posts %}
             <div class="row">
                 <div class="cell small em left">{{ post.date | date: '%x'}}</div>
                 <div class="cell right">
@@ -33,7 +33,7 @@ layout: base
                     </div>
                 </div>
             {% endif %}
-            {% if forloop.last and tag.post_count > site.tagcloud.post_limit %}
+            {% if forloop.last and tag.posts.size > site.tagcloud.post_limit %}
                 <div class="row">
                     <div class="cell left"></div>
                     <div class="cell right">
@@ -41,8 +41,8 @@ layout: base
                     </div>
                 </div>
             {% endif %}
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endfor %}
 <script type="text/javascript">
     {% include tags.js %}
