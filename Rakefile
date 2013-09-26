@@ -57,7 +57,7 @@ task :readinglist do
 			data = entry["data"]
 			e = e.push(data)
 			if !data.has_key?("link")
-				# TODO: generate a new amazon affiliate link for the title
+				# TODO: generate an amazon affiliate link for the title
 				link = "dummy"
 				modified = true
 				data.merge!({"link"=>link})

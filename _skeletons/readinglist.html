@@ -13,11 +13,10 @@ title: A reading list
             </header>
             {% for entry in category.entries %}
                 <dl>
-                    <dt><strong><a href="{{ entry.link }}">{{ entry.title }}</a></strong> — {{ entry.author }}</dt>
+                    <dt><strong>{{ entry.title }}</strong> — {{ entry.author }}</dt>
                     <dd><small>{{ entry.comment }}</small></dd>
                 </dl>
             {% endfor %}
         </section>
     {% endfor %}
-    <footer class="notice">Note that all links are Amazon affiliate links.</footer>
 </article>
