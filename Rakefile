@@ -38,62 +38,11 @@ task :post do
 	end
 end
 
-desc "Generate an updated reading list"
-task :readinglist do
-	require 'rubygems'
-	require 'jekyll'
-
-	puts "Updating ./readinglist.html"
-	conf = Jekyll.configuration({})
-	s = Jekyll::Site.new(conf)
-	s.read_layouts
-	readinglist = YAML.load_file("_readings.yml")
-	modified = false
-
-	l = []
-	readinglist.each do |category, entries|
-		e = []
-		entries.each do |entry|
-			data = entry["data"]
-			e = e.push(data)
-			if !data.has_key?("link")
-				# TODO: generate an amazon affiliate link for the title
-				link = "dummy"
-				modified = true
-				data.merge!({"link"=>link})
-			end
-		end
-
-		# sort by author (descending)
-		e = e.sort{|x,y| name_split(x["author"]) <=> name_split(y["author"])}
-		l = l.push({"name"=>category, "entries"=>e})
-	end
-
-	# sort by category (ascending)
-	l.sort{|x,y| y["name"] <=> x["name"]}
-
-	if modified
-		File.open("_readings.yml", "w+") do |file|
-			file.puts(YAML.dump(readinglist))
-		end
-	end
-
-	payload = {"readinglist"=>l}.deep_merge(s.site_payload)
-
-	FileUtils.cp(File.join(["_skeletons", "readinglist.html"]),
-		"readinglist.html")
-
-	p = Jekyll::Page.new(s, s.source, '', 'readinglist.html')
-	p.render(s.layouts, payload)
-	p.write(s.source)
-	puts "Readinglist updated"
-end
-
 desc "Generate updated tag lists"
 task :tags do
 	require 'rubygems'
 	require 'jekyll'
-	
+
 	puts "Updating tag subpages"
 	conf = Jekyll.configuration({})
 	s = Jekyll::Site.new(conf)
@@ -105,7 +54,7 @@ task :tags do
 
 	tag_cloud = []
 	tc_path = File.join([dest, "index.html"])
-	
+
 	FileUtils.cp(File.join(["_skeletons", "tags.html"]),
 		tc_path)
 	tc = Jekyll::Page.new(s, s.source, 'tags', "index.html")
@@ -128,11 +77,11 @@ task :tags do
 		page.write(s.source)
 
 		weight = posts.size.to_f * tag_count / s.posts.size
-		tag_cloud.push({"name"=>tag, "posts"=>updated_posts[0,5], 
+		tag_cloud.push({"name"=>tag, "posts"=>updated_posts[0,5],
 			"weight"=>weight})
 	end
 
-	tag_cloud = tag_cloud.sort{|d1, d2| 
+	tag_cloud = tag_cloud.sort{|d1, d2|
 		d2["weight"] <=> d1["weight"]
 	}
 	highest = (tag_count * 0.05).ceil
@@ -143,7 +92,7 @@ task :tags do
 	(highest..top).each{ |d| tag_cloud[d]["weight"] = 3 }
 	(top..avg).each{ |d| tag_cloud[d]["weight"] = 2 }
 	(avg..rem).each{ |d| tag_cloud[d]["weight"] = 1 }
-	
+
 	tag_cloud.shuffle!
 	tc_payload = {"tag_cloud"=>tag_cloud}.deep_merge(s.site_payload)
 	tc.render(s.layouts, tc_payload)
@@ -152,7 +101,7 @@ task :tags do
 end
 
 desc "Run jekyll locally"
-task :jekyll => [:tags, :readinglist] do
+task :jekyll => [:tags] do
 	require 'rubygems'
 	require 'jekyll'
 	system "jekyll serve"

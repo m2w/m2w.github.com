@@ -1,0 +1,101 @@
+---
+- name: non-fiction
+  books:
+    - title: The Guns of August
+      comment: Rare are such well-written and well edited books. It provides a detailed look at the events that lead to, and the unfolding of, World War I.
+      link: dummy
+      author: Barbara W. Tuchman
+    - title: Peopleware
+      comment: Regularly mentioned as recommended reading on HN and proggit, it is an fast and very interesting read.
+      link: dummy
+      author: Tom DeMarco &amp; Timothy Lister
+    - title: Moonwalking with Einstein
+      comment: A book on Bill Gates' reading list, that was a fantastical read, filled with insights and curious annecdotes about our memory.
+      link: dummy
+      author: Joshua Foer
+    - title: Surely You're Joking, Mr. Feynman!
+      comment: An Enjoyable read with some very quirky and funny anecdotes by one of the great scientific minds of our time.
+      link: dummy
+      author: Richard Phillips Feynman
+    - title: The Power of Habit
+      comment: Well written and very immersive, a treasure trove of insights on taking control of our habits, it is probably the best "how-to" guide to changing your life and yet never feels like one.
+      link: dummy
+      author: Charles Duhigg
+    - title: Fermat's Last Theorem
+      comment: An exploration of a fascinating topic. I felt it was a little too superficial (simplified might be the better word), I would have loved more historical details or more discussion of the consequences of some of the mentioned discoveries.
+      link: dummy
+      author: Simon Singh
+    - title: In God's House
+      comment: A scary, vivid and shocking account of the trial that led to the uncovering of the systematic abuse within and cover-up by the American catholic church.
+      link: dummy
+      author: Ray Mouton
+    - title: Forgotten Fatherland
+      comment: A portrayal of Nietzsche's sister, who was largely responsible for associating her brother's works with the ideologies of the third reich.
+      link: dummy
+      author: Ben Macintyre
+    - title: Behind the Beautiful Forever
+      comment: A riveting account of life in one of Mumbai's slums. Its ending left me aching for real closure.
+      link: dummy
+      author: Katherine Boo  
+    - title: Guns Up! A Firsthand Account of the Vietnam War
+      comment: A vivid and captivating portrayal of the everyday life of a "grunt" during the Vietnam War.
+      link: dummy
+      author: Johnnie Clark  
+    - title: George F. Kennen&#58; An American life
+      comment: A beautifully written biography that provides a look behind the scenes of America's Cold War foreign policy through the eyes of its foremost strategist.
+      link: dummy
+      author: John Lewis Gaddis
+- name: belletristic
+  books:
+    - title: Great North Road
+      comment: Gripping science fiction, set in a grim and realistic future. I had high expectations and Hamilton delivered as usual.
+      link: http://example.org
+      author: Peter F. Hamilton
+    - title: The Lost World
+      comment: A great fiction classic, fast paced and with plenty of action.
+      link: dummy
+      author: Arthur Conan Doyle
+    - title: The Glassblower of Murano
+      comment: "An intriguing mélange of past and present timelines. A little cheesy at times."
+      link: dummy
+      author: Marina Fiorato
+    - title: Judas Unchained
+      comment: Space Opera at its finest&#58; a gripping, long and epic storyline with a multitude of interwoven sub-plots.
+      link: dummy
+      author: Peter F. Hamilton
+    - title: If at First
+      comment: A Hamilton short story, more needn't be said.
+      link: dummy
+      author: Peter F. Hamilton
+    - title: The Forever War
+      comment: Beautiful, intelligent science fiction.
+      link: dummy
+      author: Joe Haldeman
+    - title: The Importance of Being Earnest
+      comment: Humorous and witty, it is not without reason Wilde's most popular play.
+      link: dummy
+      author: Oscar Wilde
+    - title: Still Missing
+      comment: Shocking and emotional. A thriller, whose unusual approach to storytelling provides a very effective vehicle to convey the protagonists emotions and facilitate empathy by the reader.
+      link: dummy
+      author: Chevy Stevens
+    - title: "Die Sturmkönige Trilogie"
+      comment: German fantasy. Set in an unorthodox universe with a lot of, albeit partially untapped, potential, that made for fast page-turning.
+      link: dummy
+      author: Kai Meyer
+    - title: Anathem
+      comment: Extremely well-written, thought-provoking science fiction.
+      link: dummy
+      author: Neal Stephenson
+    - title: Neuromancer
+      comment: Great science fiction in a bleak and grim future.
+      link: dummy
+      author: William Gibson
+    - title: The Left Hand Of Darkness
+      comment: An exploration of gender and gender-related issues, on a planet where gender is not predetermined or fixed.
+      link: dummy
+      author: Ursula K. Le Guin
+    - title: Dune
+      comment: If there ever is a work that embodies science fiction, this is probably it.
+      link: dummy
+      author: Frank Herbert
