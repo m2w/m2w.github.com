@@ -1,5 +1,5 @@
 title: 'food for thought'
-tagline: "Hi I'm <a href='/about.html'>Moritz</a>.<br> This is where I blog about programming, travel and photography."
+tagline: "Hi, I'm <a href='/about.html'>Moritz</a>.<br> This is where I blog about programming, travel and photography."
 
 tagcloud:
     post_limit: 5
@@ -16,5 +16,6 @@ permalink: /:year/:month/:day/:title
 exclude: ["CNAME", "config.rb", "talaria", "Rakefile"]
 markdown: kramdown
 paginate: 2
-server_port: 8001
+paginate_path: ":num"
+port: 8001
 pygments: true

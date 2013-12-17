@@ -155,5 +155,5 @@ desc "Run jekyll locally"
 task :jekyll => [:tags, :readinglist] do
 	require 'rubygems'
 	require 'jekyll'
-	system "jekyll --auto --server"
+	system "jekyll serve"
 end

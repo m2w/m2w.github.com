@@ -22,13 +22,13 @@ layout: base
             {% if paginator.previous_page == 1 %}
                 {% assign prev='/' %}
             {% else %}
-                {% capture prev %}/page{{ paginator.previous_page }}{% endcapture %}
+                {% capture prev %}/{{ paginator.previous_page }}{% endcapture %}
             {% endif %}
             <a href="{{ prev }}" class="huge">≪</a>
         {% endif %}
         {% if paginator.next_page %}
             {% unless paginator.previous_page %}<span class="placeholder">≪</span>{% endunless %}
-            <a href="/page{{ paginator.next_page }}" class="huge">≫</a>
+            <a href="/{{ paginator.next_page }}" class="huge">≫</a>
         {% else %}
             <span class="placeholder">≫</span>
         {% endif %}
