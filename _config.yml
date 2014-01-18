@@ -8,12 +8,11 @@ author:
     name: Moritz
     email: moritz@tibidat.com
     github: https://github.com/m2w
-    twitter: https://twitter.com/tibidat
     flickr: http://flickr.com/photos/tibidat/
 
 # config
 permalink: /:year/:month/:day/:title
-exclude: ["CNAME", "config.rb", "talaria", "Rakefile"]
+exclude: ["CNAME", "config.rb", "Rakefile"]
 markdown: kramdown
 paginate: 2
 paginate_path: ":num"
