@@ -4,10 +4,14 @@
     <meta name="description" content="A blog on programming, learning and traveling">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <title>{{ page.title }}</title>
 
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet" type="text/css">
     <link href="/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/talaria.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/js/talaria.js"></script>
 </head>
 <body>
     <div id="container">
@@ -27,11 +31,5 @@
         </div>
 {{content}}
     </div>
-    <script type="text/javascript">
-      if (!(document.cookie && /hide-tagline=true/.test(document.cookie))) {
-      var tagline = document.getElementById("tagline")
-      tagline.style.display = "block";
-      document.cookie = "hide-tagline=true;";
-      }
-    </script>
+    {% include talaria-comment.html %}
 </body>

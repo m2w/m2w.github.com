@@ -15,6 +15,6 @@ permalink: /:year/:month/:day/:title
 exclude: ["CNAME", "config.rb", "Rakefile"]
 markdown: kramdown
 paginate: 2
-paginate_path: ":num"
+paginate_path: "page:num"
 port: 8001
 pygments: true

@@ -104,7 +104,7 @@ desc "Run jekyll locally"
 task :jekyll => [:tags] do
 	require 'rubygems'
 	require 'jekyll'
-	system "jekyll serve"
+	system 'jekyll serve -w -V'
 end
 
 desc "Push to github"
