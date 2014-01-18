@@ -106,3 +106,9 @@ task :jekyll => [:tags] do
 	require 'jekyll'
 	system "jekyll serve"
 end
+
+desc "Push to github"
+task :push => [:tags] do
+	require 'rubygems'
+	system 'git push'
+end
