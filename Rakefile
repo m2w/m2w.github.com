@@ -110,5 +110,6 @@ end
 desc "Push to github"
 task :push => [:tags] do
 	require 'rubygems'
+	system 'compass compile'
 	system 'git push'
 end
