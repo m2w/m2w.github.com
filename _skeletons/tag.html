@@ -14,7 +14,7 @@ layout: base
 		<div class="row">
 			<div class="cell left"></div>
 			<div class="cell right">
-			    {% if post.tags.size > 1 %}<small>Additionally tagged as:&nbsp;
+			    {% if post.tags.size > 0 %}<small>Additionally tagged as:&nbsp;
 				    {% for t in post.tags %}
 					    {% unless t == tag %}
 					        <a href="/tags/{{ t }}.html">{{ t }}</a>{% case forloop.rindex0 %}{% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
