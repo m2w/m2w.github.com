@@ -1,20 +1,24 @@
 @import "_base";
 @import "_code";
-/*@import "_talaria";*/
+@import "_talaria";
 
 body {
     font-family: 'PT Sans Narrow', sans-serif;
-    /*
-    TODO: come up with a way to keep the logo centered on visible content
-    background-image: url('/static/img/logo.png');
-    background-repeat: no-repeat;
-    background-position: 0px 10%;
-    */
+}
+
+div#logo {
+    background:url('/static/img/logo.png') no-repeat;
+    width:80px;
+    height:80px;
+    margin-left: -80px;
+    position: absolute;
+    margin-top: -2rem;
 }
 
 div#header {
     width: 100%;
     padding-bottom: 1.5rem;
+    margin-top: 40px;
 
     #nav {
         #nav-left {
@@ -126,7 +130,7 @@ div.footnotes ol {
 }
 
 h1 {
-    font-size: $huge;
+    font-size: $extra-huge;
     display: inline;
     font-weight: bold;
 }
