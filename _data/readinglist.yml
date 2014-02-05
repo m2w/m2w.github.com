@@ -45,6 +45,12 @@
       comment: A beautifully written biography that provides a look behind the scenes of America's Cold War foreign policy through the eyes of its foremost strategist.
       link: dummy
       author: John Lewis Gaddis
+    - title: The Prime Ministers
+      comment: A fascinating and intimate account of Israeli statesmanship. It provides insight into how each of the four prime ministers worked and what motivated their actions during the crises that their governments faced and overcame.
+      author: Yehuda Avner
+    - title: Nothing to Envy
+      comment: A captivating glimpse at ordinary life in Nort Korea - I couldn't put it down.
+      author: Barbara Demick
 - name: belletristic
   books:
     - title: Great North Road
@@ -99,3 +105,6 @@
       comment: If there ever is a work that embodies science fiction, this is probably it.
       link: dummy
       author: Frank Herbert
+    - title: Oryx and Crake
+      comment: Amazingly written science fiction. Intruiging characters and the sometimes rather bizzare setting make for a great read.
+      author: Margaret Atwood
