@@ -43,7 +43,7 @@ someModule.factory('greeter', ['$window', function(renamed$window) {
 
 ### Directives
 
-- Use the dash-delimited names (e.g. `ng-bind` for `ngBind`). Prefix with `-data` if HTML validation is an issue.
+- Use the dash-delimited names (e.g. `ng-bind` for `ngBind`). Prefix with `data-` if HTML validation is an issue.
 - Use directives via tag name or attributes.
 - Return a definition object from the factory function.
 - Prefix custom directive names.
@@ -58,7 +58,7 @@ someModule.factory('greeter', ['$window', function(renamed$window) {
 
 Other Notes:
 
-- attributes in the `scope` option of directives are normalized (e.g. `bind-to-this="thing"` => `=bindToThis`)
+- attributes in the `scope` option of directives are normalized (e.g. `bind-to-this` => `bindToThis`)
 - isolated scopes do *not* prototypically inherit.
 
 
