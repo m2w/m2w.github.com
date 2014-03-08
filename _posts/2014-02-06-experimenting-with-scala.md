@@ -8,9 +8,9 @@ After a first brush with Scala during the Stripe CTF earlier this year, I have h
 
 While getting started I ran into a couple of issues with dependencies in eclipse. The following `sbt` commands will fix these for you:
 
-```
+{% highlight bash %}
 > reload
 > eclipse with-source=true
-```
+{% endhighlight %}
 
 I am still very far from groking Scala, but so far it has been a pretty nice experience. You can track my progress on [github](https://github.com/m2w/ephemeral).
