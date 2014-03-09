@@ -80,14 +80,13 @@ task :tags do
 		tag_cloud.push({"name"=>tag, "posts"=>updated_posts[0,5],
 			"weight"=>weight})
 	end
-
 	tag_cloud = tag_cloud.sort{|d1, d2|
 		d2["weight"] <=> d1["weight"]
 	}
 	highest = (tag_count * 0.05).ceil
 	top = (tag_count * 0.2).ceil
 	avg = (tag_count * 0.5).ceil
-	rem = avg
+	rem = tag_count - 1
 	(0..highest).each{ |d| tag_cloud[d]["weight"] = 4 }
 	(highest..top).each{ |d| tag_cloud[d]["weight"] = 3 }
 	(top..avg).each{ |d| tag_cloud[d]["weight"] = 2 }
