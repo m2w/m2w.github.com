@@ -1,5 +1,5 @@
 ---
-title: #djangoisland
+title: "#djangoisland"
 tags: [django, conference]
 layout: post
 ---
