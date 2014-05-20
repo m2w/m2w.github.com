@@ -1,7 +1,10 @@
 {
   "name": "talaria",
-  "main": "talaria.js",
-  "version": "0.2.4",
+  "main": [
+    "dist/talaria.js",
+    "dist/talaria.css"
+  ],
+  "version": "0.2.5",
   "homepage": "https://github.com/m2w/talaria",
   "authors": [
     "Moritz <moritz@tibidat.com>"
@@ -17,14 +20,14 @@
     "node_modules",
     "config.rb"
   ],
-  "_release": "0.2.4",
+  "_release": "0.2.5",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.4",
-    "commit": "08a2d915d6cff05fa93e318dbd1e6026dd138453"
+    "tag": "0.2.5",
+    "commit": "b34cedfb59759d25d0ddb796531592c677b8041c"
   },
-  "_source": "git://github.com/m2w/talaria.git",
-  "_target": "~0.2.4",
-  "_originalSource": "m2w/talaria",
+  "_source": "/Users/blah/Projects/public/talaria",
+  "_target": "~0.2.5",
+  "_originalSource": "../talaria",
   "_direct": true
 }
