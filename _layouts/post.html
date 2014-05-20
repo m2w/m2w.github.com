@@ -6,9 +6,9 @@ layout: base
         <span class="date">{{ page.date | date: '%x' }}</span>
         <h2><a href="{{ page.url }}" class="permalink">{{ page.title }}</a></h2>
         {% if page.tags and page.tags != empty %}
-	        <small>Tagged: {% for tag in page.tags %}
-		        <a href="/tags/{{tag}}.html">{{tag}}</a>{% case forloop.rindex0 %}, {% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
-	        {% endfor %}</small>
+                <small>Tagged: {% for tag in page.tags %}
+                        <a href="/tags/{{tag}}.html">{{tag}}</a>{% case forloop.rindex0 %}, {% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
+                {% endfor %}</small>
         {% endif %}
     </header>
     {{ content }}
