@@ -3,32 +3,59 @@
 @import "../bower_components/talaria/src/talaria.scss";
 
 body {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-div#logo {
-    background:url('/static/img/logo.png') no-repeat;
-    width:80px;
-    height:80px;
-    margin-left: -80px;
-    position: absolute;
-    margin-top: -2rem;
+@media (min-width: 600px) {
+    div#logo {
+        background: url('/static/img/logo.png') no-repeat;
+        width: 80px;
+        height: 80px;
+        margin-left: -60px;
+        position: absolute;
+        margin-top: -2rem;
+    }
+}
+
+@media (max-width: 599px) {
+    div#logo {
+        background: url('/static/img/logo.png') no-repeat;
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin-top: 0.5rem;
+    }
 }
 
 div#header {
     width: 100%;
     padding-bottom: 1.5rem;
-    margin-top: 40px;
+    @media (min-width: 600px) {
+        margin: 40px 0 2rem 0;
+    }
 
     #nav {
+        padding: 0 1rem 0 1rem;
+
         #nav-left {
-            display: table-cell;
-            width: 50%;
+            @media (min-width: 600px) {
+                float: left;
+            }
+            h1 {
+                @media (max-width: 599px) {
+                    font-size: $extra-large;
+                }
+            }
         }
 
         #nav-right {
-            display: table-cell;
-            width: 45%;
+            @media (min-width: 900px) {
+                float: right;
+            }
+            @media (max-width: 899px) {
+                float: left;
+                margin: 1rem 0 1rem 0;
+            }
 
             a + a {
                 padding-left: 0.5rem;
@@ -48,7 +75,13 @@ div#header {
 }
 
 div#container {
-    width: 600px;
+    @media (min-width: 600px) {
+        width: 75%;
+    }
+    @media (min-width: 1000px) {
+        width: 55%;
+    }
+    min-width: 300px;
     margin: 1rem auto 1rem auto;
 }
 
@@ -176,15 +209,14 @@ ol {
 a {
     text-decoration: none;
     color: $red;
-    font-weight: bold;
 
     &:visited {
         color: $dark-red;
     }
 
     &:hover, &:focus {
-        color: $red;
-        text-shadow: 0.5px 0.5px $light-red;
+        color: $light-red;
+        text-decoration: underline;
     }
 }
 
@@ -193,29 +225,25 @@ article, article * {
 }
 
 article {
+    padding: 0 1rem 0 1rem;
+    clear: both;
+
     + article {
         padding-top: 2rem;
     }
     p.img {
         text-align: center;
     }
+    img {
+        max-width: 95%;
+    }
     header {
-
-        span.date {
-            font-style: italic;
-            display: table-cell;
-            font-size: smaller;
-            text-indent: -4rem;
-            width: 0px;
-        }
-
         a {
             font-weight: normal;
         }
 
         h2 {
-            display: table-cell;
-            margin: 0px;
+            margin: 0 0 0.5rem 0;
         }
 
         + p {
