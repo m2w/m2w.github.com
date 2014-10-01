@@ -13,17 +13,13 @@ body {
         height: 80px;
         margin-left: -60px;
         position: absolute;
-        margin-top: -2rem;
+        margin-top: -1.65rem;
     }
 }
 
 @media (max-width: 599px) {
     div#logo {
-        background: url('/static/img/logo.png') no-repeat;
-        width: 80px;
-        height: 80px;
-        float: left;
-        margin-top: 0.5rem;
+        display: none;
     }
 }
 
@@ -41,20 +37,76 @@ div#header {
             @media (min-width: 600px) {
                 float: left;
             }
-            h1 {
-                @media (max-width: 599px) {
+            @media (max-width: 599px) {
+                float: right;
+                h1 {
                     font-size: $extra-large;
                 }
             }
         }
 
         #nav-right {
-            @media (min-width: 900px) {
+            position: relative;
+
+            @media (min-width: 1100px) {
                 float: right;
+
+                #nav-lg {
+                    display: inherit;
+                }
+                #nav-sm {
+                    display: none;
+                }
             }
-            @media (max-width: 899px) {
+            @media (max-width: 1099px) {
                 float: left;
-                margin: 1rem 0 1rem 0;
+
+                #nav-lg {
+                    display: none;
+                }
+                #nav-sm {
+                    display: inherit;
+                }
+            }
+
+            a#drop {
+                font-size: $extra-huge;
+            }
+
+            &:hover {
+                ul {
+                    left: 0px;
+                    a {
+                        text-decoration: none;
+                        &:hover {
+                            background: red;
+                        }
+                    }
+                }
+                a {
+                    background: #fff;
+                    text-decoration: none;
+                }
+            }
+
+            ul {
+                background: #fff;
+                background: rgba(255,255,255,0);
+                list-style: none;
+                position: absolute;
+                padding: 0px;
+                left: -9999px;
+                list-style: none;
+
+                li {
+                    float: none;
+                }
+
+                a {
+                    display: block;
+                    padding: 0.2rem;
+                    white-space: nowrap;
+                }
             }
 
             a + a {
@@ -76,10 +128,13 @@ div#header {
 
 div#container {
     @media (min-width: 600px) {
-        width: 75%;
+        width: 85%;
+    }
+    @media (min-width: 850px) {
+        width: 75%
     }
     @media (min-width: 1000px) {
-        width: 55%;
+        width: 65%;
     }
     min-width: 300px;
     margin: 1rem auto 1rem auto;
