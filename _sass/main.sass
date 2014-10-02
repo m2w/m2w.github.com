@@ -1,0 +1,118 @@
+@import _code
+@import ../bower_components/talaria/src/talaria.scss
+@import compass/typography
+@import compass/utilities/general/tag-cloud
+
+// Basic Definitions
+$huge: 1.75em
+$large: 1.5em
+$big: 1.25em
+$base: 18px
+$base-lh: 1.25
+$small: 0.75em
+
+// Vertical Rythm
+$base-font-size: $base
+$base-line-height: $base * $base-lh
+
+@include establish-baseline
+
+// Mixins
+@mixin no-background-color
+  background: #fff
+
+  &:hover, &:focus
+    background: #fff
+
+// Styling
+body
+  font-family: 'Average', serif
+  font-size: $base
+  line-height: $base-lh
+
+a
+  background: rgba(255,0,0,0.1)
+  text-decoration: none
+  color: black
+  padding: 0 0.2em 0 0.2em
+  border-radius: 0.25em
+
+  &:hover, &:focus
+    background: rgba(230,0,0,0.3)
+
+  &#title
+    @include no-background-color
+
+  &.img
+    @include no-background-color
+
+  &.permalink
+    @include no-background-color
+    padding: 0
+
+article
+  position: relative
+
+footer
+  margin: 2em 0 0.5em 0
+
+h1
+  @include adjust-font-size-to($huge)
+
+h2
+  @include adjust-font-size-to($large)
+
+h3
+  @include adjust-font-size-to($big)
+
+ul
+  list-style: disc
+
+li
+  margin: 0.15em 0 0.15em
+
+small
+  @include adjust-font-size-to($small)
+
+header + p
+  @include margin-leader(1/4, $base)
+
+img
+  max-height: 20em
+
+#container
+  max-width: 55em
+  margin: auto
+
+#cloud
+  @include tag-cloud($base)
+  @include adjust-font-size-to(3 * $base / 2)
+
+.center
+  text-align: center
+
+.hidden
+  display: none
+
+.table
+  display: table
+  border-collapse: collapse
+
+.row
+  display: table-row
+
+.cell
+  display: table-cell
+  vertical-align: middle
+
+.padded-cell
+  padding: 0 0.5em 0 0.5em
+
+.larger-text
+  font-size: $big
+
+.no-margin-bot
+  margin-bottom: 0
+
+.padding-top
+  padding-top: 2em
