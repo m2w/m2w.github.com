@@ -110,6 +110,18 @@ task :tags do
   puts "Tag subpages updated"
 end
 
+desc "Wrap Abbreviations in abbr"
+task :abbr do
+    require 'rubygems'
+    Dir.foreach(CONFIG['posts_dir']) do |f|
+      next if f.start_with?('.')
+      file = File.join(CONFIG['posts_dir'], f)
+      IO.write(file, File.open(file) do |post|
+                 post.read.gsub(/\b([A-Z][A-Z0-9]{2,}s?)\b/, '<abbr>\1</abbr>')
+               end)
+    end
+end
+
 desc "Run jekyll locally"
 task :jekyll => [:tags] do
   require 'rubygems'
