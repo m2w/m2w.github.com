@@ -69,7 +69,7 @@ task :tags do
   FileUtils.cp(File.join(["_skeletons", "tags.html"]),
                tc_path)
   tc = Jekyll::Page.new(s, s.source, 'tags', "index.html")
-  tc.data["title"] = "Tag Cloud"
+  tc.data["title"] = "Tags"
 
   tag_count = s.tags.size
   s.tags.each do |tag, posts|
@@ -98,10 +98,10 @@ task :tags do
   top = (tag_count * 0.2).ceil
   avg = (tag_count * 0.5).ceil
   rem = tag_count - 1
-  (0..highest).each{ |d| tag_cloud[d]["weight"] = 4 }
-  (highest..top).each{ |d| tag_cloud[d]["weight"] = 3 }
-  (top..avg).each{ |d| tag_cloud[d]["weight"] = 2 }
-  (avg..rem).each{ |d| tag_cloud[d]["weight"] = 1 }
+  (0..highest).each{ |d| tag_cloud[d]["weight"] = 'xl' }
+  (highest..top).each{ |d| tag_cloud[d]["weight"] = 'l' }
+  (top..avg).each{ |d| tag_cloud[d]["weight"] = 's' }
+  (avg..rem).each{ |d| tag_cloud[d]["weight"] = 's' }
 
   tag_cloud.shuffle!
   tc_payload = {"tag_cloud"=>tag_cloud}.deep_merge(s.site_payload)
