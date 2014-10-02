@@ -81,6 +81,9 @@ header + p
 img
   max-height: 20em
 
+dd
+  margin: 0
+
 hr
   margin: 0 0 0.2em 0
   border: 0
@@ -92,6 +95,11 @@ hr
   background: -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
   background: -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
   background: linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
+
+section + section
+  h3
+    @media (max-width: 1048px)
+      margin-top: 3em
 
 #container
   max-width: 55em
@@ -129,3 +137,7 @@ hr
 
 .padding-top
   padding-top: 2em
+
+.margin-left
+  @media (min-width: 1048px)
+    margin-left: -1em
