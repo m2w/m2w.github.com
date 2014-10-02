@@ -17,4 +17,4 @@ markdown: kramdown
 paginate: 2
 paginate_path: "page:num"
 port: 8001
-pygments: true
+highlighter: pygments
