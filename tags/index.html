@@ -1,651 +1,730 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A blog on programming, learning and traveling">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Tag Cloud</title>
+    <title>Tags</title>
 
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Average&subset=latin-ext' rel='stylesheet' type='text/css'>
     <link href="/static/css/main.css" rel="stylesheet" type="text/css">
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/talaria/dist/talaria.min.js"></script>
     <script type="text/javascript">
-        talaria.init({REPOSITORY_NAME: 'm2w.github.com', GITHUB_USERNAME: 'm2w'});
-        talaria.ping('/ping.txt');
+//        talaria.init({REPOSITORY_NAME: 'm2w.github.com', GITHUB_USERNAME: 'm2w'});
+//        talaria.ping('/ping.txt');
     </script>
 </head>
 <body>
     <div id="container">
-        <div id="header">
-        <div id="logo"></div>
-            <div id="nav">
-                <div id="nav-left">
-                    <h1><a href="/">food for thought</a></h1>
-                </div>
-                <div id="nav-right">
-                    <a href="/about.html"># About</a>
-                    <a href="/readinglist.html"># Reading List</a>
-                </div>
-            </div>
+        <div id="header" class="center">
+          <h1><a href="/" id="title">blog.tibidat.com</a></h1>
         </div>
-<h2>Tag Cloud</h2>
+<article>
+  <header>
+    <h2>Tags</h2>
+  </header>
 
-<div id="cloud">
-
-  <a href="/tags/travel.html" id="travel-view" class="weight-3 tag-name">travel</a>
-
-  <a href="/tags/github.html" id="github-view" class="weight-1 tag-name">github</a>
-
-  <a href="/tags/checklist.html" id="checklist-view" class="weight-2 tag-name">checklist</a>
-
-  <a href="/tags/conference.html" id="conference-view" class="weight-3 tag-name">conference</a>
-
-  <a href="/tags/dart.html" id="dart-view" class="weight-2 tag-name">dart</a>
-
-  <a href="/tags/erlang.html" id="erlang-view" class="weight-1 tag-name">erlang</a>
-
-  <a href="/tags/js.html" id="js-view" class="weight-4 tag-name">js</a>
-
-  <a href="/tags/reference.html" id="reference-view" class="weight-1 tag-name">reference</a>
-
-  <a href="/tags/hœnir.html" id="hœnir-view" class="weight-1 tag-name">hœnir</a>
-
-  <a href="/tags/email.html" id="email-view" class="weight-1 tag-name">email</a>
-
-  <a href="/tags/slick.html" id="slick-view" class="weight-1 tag-name">slick</a>
-
-  <a href="/tags/blog.html" id="blog-view" class="weight-2 tag-name">blog</a>
-
-  <a href="/tags/google.html" id="google-view" class="weight-1 tag-name">google</a>
-
-  <a href="/tags/hiking.html" id="hiking-view" class="weight-4 tag-name">hiking</a>
-
-  <a href="/tags/bash.html" id="bash-view" class="weight-2 tag-name">bash</a>
-
-  <a href="/tags/jQuery.html" id="jQuery-view" class="weight-2 tag-name">jQuery</a>
-
-  <a href="/tags/angularjs.html" id="angularjs-view" class="weight-1 tag-name">angularjs</a>
-
-  <a href="/tags/erli.html" id="erli-view" class="weight-1 tag-name">erli</a>
-
-  <a href="/tags/spray.html" id="spray-view" class="weight-1 tag-name">spray</a>
-
-  <a href="/tags/scala.html" id="scala-view" class="weight-3 tag-name">scala</a>
-
-  <a href="/tags/django.html" id="django-view" class="weight-1 tag-name">django</a>
-
-  <a href="/tags/jekyll.html" id="jekyll-view" class="weight-2 tag-name">jekyll</a>
-
-</div>
-<div id="tag-data-header" class="hidden">
-  <h3>Most recent posts tagged <em><span id="tag-name-placeholder">placeholder</span></em></h3>
-</div>
-
-<div id="travel-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">05/29/14</div>
-    <div class="cell right">
-      <a href="/2014/05/29/code-hiking">Code-Hiking</a>
-    </div>
+  <div id="cloud" class="center">
+    
+    <a href="/tags/blog.html" id="blog-view" class="s tag-name">blog</a>
+    
+    <a href="/tags/angularjs.html" id="angularjs-view" class="s tag-name">angularjs</a>
+    
+    <a href="/tags/hœnir.html" id="hœnir-view" class="s tag-name">hœnir</a>
+    
+    <a href="/tags/jQuery.html" id="jQuery-view" class="s tag-name">jQuery</a>
+    
+    <a href="/tags/js.html" id="js-view" class="l tag-name">js</a>
+    
+    <a href="/tags/conference.html" id="conference-view" class="l tag-name">conference</a>
+    
+    <a href="/tags/scala.html" id="scala-view" class="l tag-name">scala</a>
+    
+    <a href="/tags/jekyll.html" id="jekyll-view" class="s tag-name">jekyll</a>
+    
+    <a href="/tags/django.html" id="django-view" class="s tag-name">django</a>
+    
+    <a href="/tags/checklist.html" id="checklist-view" class="s tag-name">checklist</a>
+    
+    <a href="/tags/bash.html" id="bash-view" class="s tag-name">bash</a>
+    
+    <a href="/tags/hiking.html" id="hiking-view" class="xl tag-name">hiking</a>
+    
+    <a href="/tags/dart.html" id="dart-view" class="s tag-name">dart</a>
+    
+    <a href="/tags/spray.html" id="spray-view" class="s tag-name">spray</a>
+    
+    <a href="/tags/reference.html" id="reference-view" class="s tag-name">reference</a>
+    
+    <a href="/tags/erli.html" id="erli-view" class="s tag-name">erli</a>
+    
+    <a href="/tags/erlang.html" id="erlang-view" class="s tag-name">erlang</a>
+    
+    <a href="/tags/travel.html" id="travel-view" class="xl tag-name">travel</a>
+    
+    <a href="/tags/email.html" id="email-view" class="s tag-name">email</a>
+    
+    <a href="/tags/google.html" id="google-view" class="s tag-name">google</a>
+    
+    <a href="/tags/slick.html" id="slick-view" class="s tag-name">slick</a>
+    
+    <a href="/tags/github.html" id="github-view" class="s tag-name">github</a>
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/hiking.html">hiking</a>
-      </small>
-    </div>
+  <div id="tag-data-header" class="hidden">
+    <h3>Most recent posts tagged <em><span id="tag-name-placeholder">placeholder</span></em></h3>
   </div>
-
-
-  <div class="row">
-    <div class="cell small em left">08/23/13</div>
-    <div class="cell right">
-      <a href="/2013/08/23/corsica-on-foot">Corsica, on Foot</a>
+  
+  <div id="blog-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>26 Mar 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/03/26/writing-a-github-hosted-commenting-system" class="permalink">Writing a github hosted commenting system</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/hiking.html">hiking</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/github.html">github</a> and 
+          <a href="/tags/jQuery.html">jQuery</a>
+        </small>
+      </div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="github-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/26/13</div>
-    <div class="cell right">
-      <a href="/2013/03/26/writing-a-github-hosted-commenting-system">Writing a github hosted commenting system</a>
+    
+    
+    <div class="row">
+      <div class="cell"><small>22 Mar 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/03/22/blog-relaunch" class="permalink">Blog relaunch</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/jQuery.html">jQuery</a> and 
-        <a href="/tags/blog.html">blog</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/jekyll.html">jekyll</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="checklist-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">08/16/13</div>
-    <div class="cell right">
-      <a href="/2013/08/16/hiking-essentials">Hiking Essentials</a>
+  <div id="angularjs-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>04 Feb 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/02/04/notes-on-angular" class="permalink">Notes on Angular.js</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/hiking.html">hiking</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/js.html">js</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="conference-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">05/19/14</div>
-    <div class="cell right">
-      <a href="/2014/05/19/djangoisland">#djangoisland</a>
+  <div id="hœnir-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>27 Mar 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/03/27/erli---the-third" class="permalink">erli - the third</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/django.html">django</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/erlang.html">erlang</a> and 
+          <a href="/tags/erli.html">erli</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-  <div class="row">
-    <div class="cell small em left">04/07/14</div>
-    <div class="cell right">
-      <a href="/2014/04/07/scalar-conf-writeup">Scalar Conf Writeup</a>
+  <div id="jQuery-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>26 Mar 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/03/26/writing-a-github-hosted-commenting-system" class="permalink">Writing a github hosted commenting system</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/scala.html">scala</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/github.html">github</a> and 
+          <a href="/tags/blog.html">blog</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="dart-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">01/09/14</div>
-    <div class="cell right">
-      <a href="/2014/01/09/on-dart">On Dart</a>
+  <div id="js-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>22 Mar 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/03/22/getting-started-with-gulp.js" class="permalink">Getting started with gulp.js</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="erlang-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/27/14</div>
-    <div class="cell right">
-      <a href="/2014/03/27/erli---the-third">erli - the third</a>
+    
+    
+    <div class="row">
+      <div class="cell"><small>09 Feb 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/02/09/talaria-0.2.0" class="permalink">talaria 0.2.0</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/erli.html">erli</a> and 
-        <a href="/tags/hœnir.html">hœnir</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>04 Feb 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/02/04/notes-on-angular" class="permalink">Notes on Angular.js</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="js-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/22/14</div>
-    <div class="cell right">
-      <a href="/2014/03/22/getting-started-with-gulp.js">Getting started with gulp.js</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/angularjs.html">angularjs</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-  <div class="row">
-    <div class="cell small em left">02/09/14</div>
-    <div class="cell right">
-      <a href="/2014/02/09/talaria-0.2.0">talaria 0.2.0</a>
+  <div id="conference-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>19 May 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/05/19/djangoisland" class="permalink">#djangoisland</a></div>
     </div>
-  </div>
-
-
-  <div class="row">
-    <div class="cell small em left">02/04/14</div>
-    <div class="cell right">
-      <a href="/2014/02/04/notes-on-angular">Notes on Angular.js</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/django.html">django</a>
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/angularjs.html">angularjs</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>07 Apr 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/04/07/scalar-conf-writeup" class="permalink">Scalar Conf Writeup</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="reference-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">12/28/12</div>
-    <div class="cell right">
-      <a href="/2012/12/28/notes-on-bash-scripting">Notes on bash scripting</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/scala.html">scala</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/bash.html">bash</a>
-      </small>
+</article>
+
+  <div id="scala-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>07 Apr 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/04/07/scalar-conf-writeup" class="permalink">Scalar Conf Writeup</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="hœnir-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/27/14</div>
-    <div class="cell right">
-      <a href="/2014/03/27/erli---the-third">erli - the third</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/conference.html">conference</a>
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/erlang.html">erlang</a> and 
-        <a href="/tags/erli.html">erli</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>06 Feb 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/02/06/experimenting-with-scala" class="permalink">Experimenting with Scala</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="email-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">01/28/13</div>
-    <div class="cell right">
-      <a href="/2013/01/28/on-google-apps-for-business">On Google Apps for Business</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/spray.html">spray</a> and 
+          <a href="/tags/slick.html">slick</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/google.html">google</a>
-      </small>
+</article>
+
+  <div id="jekyll-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>22 Mar 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/03/22/blog-relaunch" class="permalink">Blog relaunch</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="slick-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">02/06/14</div>
-    <div class="cell right">
-      <a href="/2014/02/06/experimenting-with-scala">Experimenting with Scala</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/blog.html">blog</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/scala.html">scala</a> and 
-        <a href="/tags/spray.html">spray</a>
-      </small>
+</article>
+
+  <div id="django-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>19 May 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/05/19/djangoisland" class="permalink">#djangoisland</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="blog-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/26/13</div>
-    <div class="cell right">
-      <a href="/2013/03/26/writing-a-github-hosted-commenting-system">Writing a github hosted commenting system</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/conference.html">conference</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/github.html">github</a> and 
-        <a href="/tags/jQuery.html">jQuery</a>
-      </small>
+</article>
+
+  <div id="checklist-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>16 Aug 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/08/16/hiking-essentials" class="permalink">Hiking Essentials</a></div>
     </div>
-  </div>
-
-
-  <div class="row">
-    <div class="cell small em left">03/22/13</div>
-    <div class="cell right">
-      <a href="/2013/03/22/blog-relaunch">Blog relaunch</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/hiking.html">hiking</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/jekyll.html">jekyll</a>
-      </small>
+</article>
+
+  <div id="bash-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>28 Dec 2012</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2012/12/28/notes-on-bash-scripting" class="permalink">Notes on bash scripting</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="google-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">01/28/13</div>
-    <div class="cell right">
-      <a href="/2013/01/28/on-google-apps-for-business">On Google Apps for Business</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/reference.html">reference</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/email.html">email</a>
-      </small>
+</article>
+
+  <div id="hiking-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>30 Sep 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/09/30/hiking-on-the-southern-kungsleden" class="permalink">Hiking on the southern Kungsleden</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="hiking-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">05/29/14</div>
-    <div class="cell right">
-      <a href="/2014/05/29/code-hiking">Code-Hiking</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/travel.html">travel</a>
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/travel.html">travel</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>24 Aug 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/08/24/kungsleden" class="permalink">Preparing for the Kungsleden</a></div>
     </div>
-  </div>
-
-
-  <div class="row">
-    <div class="cell small em left">08/23/13</div>
-    <div class="cell right">
-      <a href="/2013/08/23/corsica-on-foot">Corsica, on Foot</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/travel.html">travel</a>
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/travel.html">travel</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>29 May 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/05/29/code-hiking" class="permalink">Code-Hiking</a></div>
     </div>
-  </div>
-
-
-  <div class="row">
-    <div class="cell small em left">08/16/13</div>
-    <div class="cell right">
-      <a href="/2013/08/16/hiking-essentials">Hiking Essentials</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/travel.html">travel</a>
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/checklist.html">checklist</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>23 Aug 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/08/23/corsica-on-foot" class="permalink">Corsica, on Foot</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="bash-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">12/28/12</div>
-    <div class="cell right">
-      <a href="/2012/12/28/notes-on-bash-scripting">Notes on bash scripting</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/travel.html">travel</a>
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/reference.html">reference</a>
-      </small>
+    
+    
+    <div class="row">
+      <div class="cell"><small>16 Aug 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/08/16/hiking-essentials" class="permalink">Hiking Essentials</a></div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="jQuery-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/26/13</div>
-    <div class="cell right">
-      <a href="/2013/03/26/writing-a-github-hosted-commenting-system">Writing a github hosted commenting system</a>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/checklist.html">checklist</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/github.html">github</a> and 
-        <a href="/tags/blog.html">blog</a>
-      </small>
+</article>
+
+  <div id="dart-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>09 Jan 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/01/09/on-dart" class="permalink">On Dart</a></div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="angularjs-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">02/04/14</div>
-    <div class="cell right">
-      <a href="/2014/02/04/notes-on-angular">Notes on Angular.js</a>
+  <div id="spray-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>06 Feb 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/02/06/experimenting-with-scala" class="permalink">Experimenting with Scala</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/js.html">js</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/scala.html">scala</a> and 
+          <a href="/tags/slick.html">slick</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="erli-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/27/14</div>
-    <div class="cell right">
-      <a href="/2014/03/27/erli---the-third">erli - the third</a>
+  <div id="reference-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>28 Dec 2012</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2012/12/28/notes-on-bash-scripting" class="permalink">Notes on bash scripting</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/erlang.html">erlang</a> and 
-        <a href="/tags/hœnir.html">hœnir</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/bash.html">bash</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="spray-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">02/06/14</div>
-    <div class="cell right">
-      <a href="/2014/02/06/experimenting-with-scala">Experimenting with Scala</a>
+  <div id="erli-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>27 Mar 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/03/27/erli---the-third" class="permalink">erli - the third</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/scala.html">scala</a> and 
-        <a href="/tags/slick.html">slick</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/erlang.html">erlang</a> and 
+          <a href="/tags/hœnir.html">hœnir</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-</div>
-
-<div id="scala-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">04/07/14</div>
-    <div class="cell right">
-      <a href="/2014/04/07/scalar-conf-writeup">Scalar Conf Writeup</a>
+  <div id="erlang-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>27 Mar 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/03/27/erli---the-third" class="permalink">erli - the third</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/conference.html">conference</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/erli.html">erli</a> and 
+          <a href="/tags/hœnir.html">hœnir</a>
+        </small>
+      </div>
     </div>
+    
+    
   </div>
+</article>
 
-
-  <div class="row">
-    <div class="cell small em left">02/06/14</div>
-    <div class="cell right">
-      <a href="/2014/02/06/experimenting-with-scala">Experimenting with Scala</a>
+  <div id="travel-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>30 Sep 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/09/30/hiking-on-the-southern-kungsleden" class="permalink">Hiking on the southern Kungsleden</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/spray.html">spray</a> and 
-        <a href="/tags/slick.html">slick</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/hiking.html">hiking</a>
+        </small>
+      </div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="django-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">05/19/14</div>
-    <div class="cell right">
-      <a href="/2014/05/19/djangoisland">#djangoisland</a>
+    
+    
+    <div class="row">
+      <div class="cell"><small>24 Aug 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/08/24/kungsleden" class="permalink">Preparing for the Kungsleden</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/conference.html">conference</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/hiking.html">hiking</a>
+        </small>
+      </div>
     </div>
-  </div>
-
-
-</div>
-
-<div id="jekyll-posts" class="table hidden">
-
-  <div class="row">
-    <div class="cell small em left">03/22/13</div>
-    <div class="cell right">
-      <a href="/2013/03/22/blog-relaunch">Blog relaunch</a>
+    
+    
+    <div class="row">
+      <div class="cell"><small>29 May 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/05/29/code-hiking" class="permalink">Code-Hiking</a></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="cell left"></div>
-    <div class="cell right">
-      <small>Additionally tagged as:&nbsp;
-        <a href="/tags/blog.html">blog</a>
-      </small>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/hiking.html">hiking</a>
+        </small>
+      </div>
     </div>
+    
+    
+    <div class="row">
+      <div class="cell"><small>23 Aug 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/08/23/corsica-on-foot" class="permalink">Corsica, on Foot</a></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/hiking.html">hiking</a>
+        </small>
+      </div>
+    </div>
+    
+    
   </div>
+</article>
 
+  <div id="email-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>28 Jan 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/01/28/on-google-apps-for-business" class="permalink">On Google Apps for Business</a></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/google.html">google</a>
+        </small>
+      </div>
+    </div>
+    
+    
+  </div>
+</article>
 
-</div>
+  <div id="google-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>28 Jan 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/01/28/on-google-apps-for-business" class="permalink">On Google Apps for Business</a></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/email.html">email</a>
+        </small>
+      </div>
+    </div>
+    
+    
+  </div>
+</article>
+
+  <div id="slick-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>06 Feb 2014</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2014/02/06/experimenting-with-scala" class="permalink">Experimenting with Scala</a></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/scala.html">scala</a> and 
+          <a href="/tags/spray.html">spray</a>
+        </small>
+      </div>
+    </div>
+    
+    
+  </div>
+</article>
+
+  <div id="github-posts" class="hidden table" style="display:none;">
+    
+    <div class="row">
+      <div class="cell"><small>26 Mar 2013</small></div>
+      <div class="cell padded-cell">—</div>
+      <div class="cell larger-text"><a href="/2013/03/26/writing-a-github-hosted-commenting-system" class="permalink">Writing a github hosted commenting system</a></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell padded-cell"></div>
+      <div class="cell">
+        <small>Additionally tagged as:&nbsp;
+          <a href="/tags/jQuery.html">jQuery</a> and 
+          <a href="/tags/blog.html">blog</a>
+        </small>
+      </div>
+    </div>
+    
+    
+  </div>
+</article>
 
 <script type="text/javascript">
   $('a.tag-name').click(function(e){
-	var tag_name;
-	$('.hidden').hide(); // hide any visible data
-	tag_name = e.target.id.split('-')[0];
-	$('#tag-name-placeholder').text(tag_name); // populate the details header
-	$('#tag-data-header').show();
-	$('#' + tag_name + '-posts').show(); // show recent posts
-	e.preventDefault();
-	return false;
+    var tag_name;
+    $('.hidden').hide(); // hide any visible data
+    tag_name = e.target.id.split('-')[0];
+    $('#tag-name-placeholder').text(tag_name); // populate the details header
+    $('#tag-data-header').show();
+    $('#' + tag_name + '-posts').show(); // show recent posts
+    e.preventDefault();
+    return false;
 });
+
 </script>
 
     </div>
