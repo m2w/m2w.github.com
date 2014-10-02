@@ -118,7 +118,7 @@ task :abbr do
       next if f.start_with?('.')
       file = File.join(CONFIG['posts_dir'], f)
       IO.write(file, File.open(file) do |post|
-                 post.read.gsub(/\b([A-Z][A-Z0-9]{2,}s?)\b/, '<abbr>\1</abbr>')
+                 post.read.gsub(/(\s)([A-Z][A-Z0-9]{2,}s?)(\s)/, '\1<abbr>\2</abbr>\3')
                end)
     end
 end
