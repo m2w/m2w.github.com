@@ -20,7 +20,7 @@ layout: base
     <div class="row">
       <div class="cell"><small>{{ post.date | date_to_string }}</small></div>
       <div class="cell padded-cell">—</div>
-      <div class="cell larger-text"><a href="{{ post.url }}" class="permalink">{{ post.title }}</a></div>
+      <div class="cell larger-text"><a href="{{ post.url }}" class="permalink"># {{ post.title }}</a></div>
     </div>{% if post.tags.size > 0 %}
     <div class="row">
       <div class="cell"></div>
