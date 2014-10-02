@@ -1,8 +1,10 @@
 ---
-layout: base
+layout: static
 title: About
 ---
-##Welcome, fellow internaut!
+<header>
+<h2>Welcome, fellow internaut!</h2>
+</header>
 
 I'm Moritz. I enjoy [programming]({{ site.author.github }}), traveling and [photography](/photography.html).
 
