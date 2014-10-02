@@ -3,7 +3,9 @@ layout: post
 title: Notes on bash scripting
 tags: [bash, reference]
 ---
-I recently skimmed through the [Bash Guide](http://mywiki.wooledge.org/BashGuide/); some extracts for reference.
+I recently skimmed through the
+[Bash Guide](http://mywiki.wooledge.org/BashGuide/).
+Some extracts for reference:
 
 ### Scripting Conventions
 
@@ -51,40 +53,40 @@ esac
 ### Truthiness
 
 {% highlight bash %}
--e FILE # True if file exists.
--f FILE # True if file is a regular file.
--d FILE # True if file is a directory.
--h FILE # True if file is a symbolic link.
--p PIPE # True if pipe exists.
--r FILE # True if file is readable by you.
--s FILE # True if file exists and is not empty.
+-e <abbr>FILE</abbr> # True if file exists.
+-f <abbr>FILE</abbr> # True if file is a regular file.
+-d <abbr>FILE</abbr> # True if file is a directory.
+-h <abbr>FILE</abbr> # True if file is a symbolic link.
+-p <abbr>PIPE</abbr> # True if pipe exists.
+-r <abbr>FILE</abbr> # True if file is readable by you.
+-s <abbr>FILE</abbr> # True if file exists and is not empty.
 -t FD   # True if FD is opened on a terminal.
--w FILE # True if the file is writable by you.
--x FILE # True if the file is executable by you.
--O FILE # True if the file is effectively owned by you.
--G FILE # True if the file is effectively owned by your group.
-FILE -nt FILE # True if the first file is newer than the second.
-FILE -ot FILE # True if the first file is older than the second.
--z STRING # True if the string is empty (it's length is zero).
--n STRING # True if the string is not empty (it's length is not zero).
-STRING = STRING  # True if the first string is identical to the second.
-STRING != STRING # True if the first string is not identical to the second.
-STRING < STRING  # True if the first string sorts before the second.
-STRING > STRING  # True if the first string sorts after the second.
-STRING = (or ==) PATTERN # True if the string matches the glob pattern.
-STRING =~ REGEX # True if the string matches the regex pattern.
-INT -eq INT # True if both integers are identical.
-INT -ne INT # True if the integers are not identical.
-INT -lt INT # True if the first integer is less than the second.
-INT -gt INT # True if the first integer is greater than the second.
-INT -le INT # True if the first integer is less than or equal to the second.
-INT -ge INT # True if the first integer is greater than or equal to the second.
-EXPR -a EXPR # True if both expressions are true (logical AND).
-EXPR -o EXPR # True if either expression is true (logical OR).
-! EXPR   # Inverts the result of the expression (logical NOT).
-( EXPR ) # Parentheses can be used to change the evaluation precedence.
-EXPR && EXPR # Much like the '-a' operator of test, but with short-circuit logic.
-EXPR || EXPR # Much like the '-o' operator of test, but with short-circuit logic.
+-w <abbr>FILE</abbr> # True if the file is writable by you.
+-x <abbr>FILE</abbr> # True if the file is executable by you.
+-O <abbr>FILE</abbr> # True if the file is effectively owned by you.
+-G <abbr>FILE</abbr> # True if the file is effectively owned by your group.
+<abbr>FILE</abbr> -nt <abbr>FILE</abbr> # True if the first file is newer than the second.
+<abbr>FILE</abbr> -ot <abbr>FILE</abbr> # True if the first file is older than the second.
+-z <abbr>STRING</abbr> # True if the string is empty (it's length is zero).
+-n <abbr>STRING</abbr> # True if the string is not empty (it's length is not zero).
+<abbr>STRING</abbr> = <abbr>STRING</abbr>  # True if the first string is identical to the second.
+<abbr>STRING</abbr> != <abbr>STRING</abbr> # True if the first string is not identical to the second.
+<abbr>STRING</abbr> < <abbr>STRING</abbr>  # True if the first string sorts before the second.
+<abbr>STRING</abbr> > <abbr>STRING</abbr>  # True if the first string sorts after the second.
+<abbr>STRING</abbr> = (or ==) <abbr>PATTERN</abbr> # True if the string matches the glob pattern.
+<abbr>STRING</abbr> =~ <abbr>REGEX</abbr> # True if the string matches the regex pattern.
+<abbr>INT</abbr> -eq <abbr>INT</abbr> # True if both integers are identical.
+<abbr>INT</abbr> -ne <abbr>INT</abbr> # True if the integers are not identical.
+<abbr>INT</abbr> -lt <abbr>INT</abbr> # True if the first integer is less than the second.
+<abbr>INT</abbr> -gt <abbr>INT</abbr> # True if the first integer is greater than the second.
+<abbr>INT</abbr> -le <abbr>INT</abbr> # True if the first integer is less than or equal to the second.
+<abbr>INT</abbr> -ge <abbr>INT</abbr> # True if the first integer is greater than or equal to the second.
+<abbr>EXPR</abbr> -a <abbr>EXPR</abbr> # True if both expressions are true (logical AND).
+<abbr>EXPR</abbr> -o <abbr>EXPR</abbr> # True if either expression is true (logical OR).
+! <abbr>EXPR</abbr>   # Inverts the result of the expression (logical NOT).
+( <abbr>EXPR</abbr> ) # Parentheses can be used to change the evaluation precedence.
+<abbr>EXPR</abbr> && <abbr>EXPR</abbr> # Much like the '-a' operator of test, but with short-circuit logic.
+<abbr>EXPR</abbr> || <abbr>EXPR</abbr> # Much like the '-o' operator of test, but with short-circuit logic.
 {% endhighlight %}
 
 ### Misc
