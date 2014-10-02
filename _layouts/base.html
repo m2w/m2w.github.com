@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="A blog on programming, learning and traveling">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A blog on programming, learning and traveling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ page.title }}</title>
+  <title>{{ page.title }}</title>
 
-    <link href="/static/css/main.css" rel="stylesheet" type="text/css">
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/bower_components/talaria/dist/talaria.min.js"></script>
-    <script type="text/javascript">
-        talaria.init({REPOSITORY_NAME: 'm2w.github.com', GITHUB_USERNAME: 'm2w'});
-        talaria.ping('/ping.txt');
-    </script>
+  <link href='http://fonts.googleapis.com/css?family=Average&subset=latin-ext' rel='stylesheet' type='text/css'>
+  <link href="/static/css/main.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/bower_components/talaria/dist/talaria.min.js"></script>
+  <script type="text/javascript">
+    talaria.init({REPOSITORY_NAME: 'm2w.github.com', GITHUB_USERNAME: 'm2w'});
+    talaria.ping('/ping.txt');
+  </script>
 </head>
 <body>
-    <div id="container">
-        <div id="header">
-        <div id="logo"></div>
-            <div id="nav">
-                <div id="nav-left">
-                    <h1><a href="/">{{ site.title }}</a></h1>
-                </div>
-                <div id="nav-right">
-                  <div id="nav-sm">
-                    <a href="#" id="drop">&#8801;</a>
-                    <ul>
-                      <li><a href="/about.html">About</a></li>
-                      <li><a href="/readinglist.html">Reading List</a></li>
-                    </ul>
-                  </div>
-                  <div id="nav-lg">
-                    <a href="/about.html"># About</a>
-                    <a href="/readinglist.html"># Reading List</a>
-                  </div>
-                </div>
-            </div>
-        </div>
-{{content}}
+  <div id="container">
+    <div id="header" class="center">
+      <h1><a href="/" id="title">blog.tibidat.com</a></h1>
     </div>
-    {% include talaria-comment.html %}
+    {{content}}
+  </div>
+  {% include talaria-comment.html %}
 </body>

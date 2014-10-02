@@ -2,15 +2,17 @@
 layout: base
 ---
 <article>
-    <header>
-        <h2><a href="{{ page.url }}" class="permalink">{{ page.title }}</a></h2>
-        <small class="date">Posted {{ page.date | date_to_string }}.</small>
-        {% if page.tags and page.tags != empty %}
-                <small>Tagged: {% for tag in page.tags %}
-                        <a href="/tags/{{tag}}.html">{{tag}}</a>{% case forloop.rindex0 %}, {% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
-                {% endfor %}</small>
-        {% endif %}
-    </header>
-    {{ content }}
-    {% include talaria-wrapper.html %}
+  <header>
+    <h2 class="no-margin-bot">
+      <a href="{{ page.url }}" class="permalink">{{ page.title }}</a>
+    </h2>
+    <small class="date">Posted {{ page.date | date_to_string }}.</small>
+    {% if page.tags and page.tags != empty %}
+    <small>Tagged: {% for tag in page.tags %}
+      <a href="/tags/{{tag}}.html">{{tag}}</a>{% case forloop.rindex0 %}, {% when 1 %} and {% when 0 %}{% else %}, {% endcase %}
+      {% endfor %}</small>
+    {% endif %}
+  </header>
+  {{ content }}
+  {% include talaria-wrapper.html %}
 </article>
