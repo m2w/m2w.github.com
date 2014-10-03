@@ -19,20 +19,21 @@ layout: base
     </article>
 {% endfor %}
 {% if paginator.total_posts > site.paginate %}
-    <div id="pagination">
+    <div class="center margin-top-bot">
         {% if paginator.previous_page %}
             {% if paginator.previous_page == 1 %}
                 {% assign prev='/' %}
             {% else %}
                 {% capture prev %}/page{{ paginator.previous_page }}{% endcapture %}
             {% endif %}
-            <a href="{{ prev }}" class="huge">≪</a>
+            <a href="{{ prev }}" class="huge">newer posts</a>
         {% endif %}
+            <span class="space"></span>
         {% if paginator.next_page %}
-            {% unless paginator.previous_page %}<span class="placeholder">≪</span>{% endunless %}
-            <a href="/page{{ paginator.next_page }}" class="huge">≫</a>
+            {% unless paginator.previous_page %}<span class="huge greyed-out">newer posts</span>{% endunless %}
+            <a href="/page{{ paginator.next_page }}" class="huge">older posts</a>
         {% else %}
-            <span class="placeholder">≫</span>
+            <span class="huge greyed-out">older posts</span>
         {% endif %}
     </div>
 {% endif %}
