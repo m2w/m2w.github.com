@@ -6,12 +6,12 @@ layout: base
     <h2>Posts tagged <em>{{ tag }}</em></h2>
   </header>
   <div class="table">
-  {% for post in p %}
+    {% for post in p %}
     <div class="row">
       <div class="cell"><small>{{ post.date | date_to_string }}</small></div>
       <div class="cell padded-cell">—</div>
       <div class="cell larger-text">
-        <a href="{{ post.url }}" class="permalink"># {{ post.title }}</a><br>
+        <a href="{{ post.url }}" class="list"># {{ post.title }}</a><br>
       </div>
     </div>
     <div class="row">
@@ -23,11 +23,12 @@ layout: base
         </small>{% endif %}
       </div>
     </div>
-  {% endfor %}
+    {% endfor %}
     <div class="row">
       <div class="cell"></div>
       <div class="cell padded-cell"></div>
       <div class="cell padding-top"><a href="/tags/">« tag cloud «</a>
       </div>
+    </div>
   </div>
 </article>
