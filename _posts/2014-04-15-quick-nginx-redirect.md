@@ -4,7 +4,7 @@ tags: []
 layout: post
 ---
 
-A simple redirect in nginx:
+Here's a simple redirect in nginx:
 
 {% highlight nginx %}
 server {
@@ -14,4 +14,6 @@ server {
 }
 {% endhighlight %}
 
-Minimalistic and very readable. Note the usage of a `303`; this leaves the option of adding other subdomains later without worry of clients with cached `301s`.
+Minimalistic and very readable. Note the usage of a `303`; this means
+I don't have to worry about clients with cached `301s` should I decide
+to change the redirect target at a later time.
