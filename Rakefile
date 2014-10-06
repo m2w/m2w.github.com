@@ -23,6 +23,25 @@ class ::Hash
     end
 end
 
+# taken straight from ruby-doc
+def fetch(uri_str, limit = 10)
+  # You should choose a better exception.
+  raise ArgumentError, 'too many HTTP redirects' if limit == 0
+
+  response = Net::HTTP.get_response(URI(uri_str))
+
+  case response
+  when Net::HTTPSuccess then
+    response
+  when Net::HTTPRedirection then
+    location = response['location']
+    warn "redirected to #{location}"
+    fetch(location, limit - 1)
+  else
+    response.value
+  end
+end
+
 #############
 # Config
 #############
@@ -132,39 +151,46 @@ end
 
 desc "Create/update gists for posts"
 task :gists do
-    require 'rubygems'
-    require 'jekyll'
+  require 'rubygems'
+  require 'jekyll'
+  require 'netrc'
+  require 'openssl'
+  require 'net/http'
+  require 'octokit'
 
-    require 'octokit'
-    client = Octokit::Client.new(:netrc => true)
-    gists = Octokit.gists('m2w')
+  client = Octokit::Client.new(:netrc => true)
+  gists = Octokit.gists('m2w')
 
-    conf = Jekyll.configuration({})
-    s = Jekyll::Site.new(conf)
-    s.read
+  conf = Jekyll.configuration({})
+  s = Jekyll::Site.new(conf)
+  s.read
 
-    g_ids = {}
+  g_ids = {}
 
-    gists.each do |g|
-      if g.description == 'blog post' && g.files.keys.length == 1
-        name = g.files.keys[0]
-        g_ids[name] = {:id => g.id, :contents => g.files[name].content}
-      end
+  gists.each do |g|
+    if g.description == 'blog post' && g.files.attrs.keys.length == 1
+      name = g.files.attrs.keys[0]
+      raw = g.files.attrs[name][:raw_url]
+      contents = fetch(raw)
+      g_ids[name.to_s] = {:id => g.id, :contents => contents.body}
     end
+  end
 
-    s.posts.each do |post|
-      # if we already have a gist for the post, check if it needs updating
-      if g_ids.has_key?(post.name)
-        if ! g_ids[post.name].contents.eql?(post.contents)
-          @client.edit_gist('some_id', {
-                              :files => {post.name => {"content" => post.contents}}
-                            })
-        end
-      else # create a new gist
-        @client.create_gist({:public => true, :description => "blog post",
-                              :files => {post.name => {"content" => post.content}}})
+  s.posts.each do |post|
+    # if we already have a gist for the post, check if it needs updating
+    if g_ids.has_key?(post.name)
+      if ! g_ids[post.name][:contents].eql?(post.content)
+        puts 'Updating gist: ' + post.name
+        client.edit_gist(g_ids[post.name][:id], {
+                           :files => {post.name => {"content" => post.content}}
+                         })
       end
+    else # create a new gist
+      puts 'Creating gist: ' + post.name
+      client.create_gist({:public => true, :description => "blog post",
+                           :files => {post.name => {"content" => post.content}}})
     end
+  end
 end
 
 desc "Push to github"
