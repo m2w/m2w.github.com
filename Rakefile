@@ -130,6 +130,43 @@ task :jekyll => [:tags] do
   system 'jekyll serve -w -V'
 end
 
+desc "Create/update gists for posts"
+task :gists do
+    require 'rubygems'
+    require 'jekyll'
+
+    require 'octokit'
+    client = Octokit::Client.new(:netrc => true)
+    gists = Octokit.gists('m2w')
+
+    conf = Jekyll.configuration({})
+    s = Jekyll::Site.new(conf)
+    s.read
+
+    g_ids = {}
+
+    gists.each do |g|
+      if g.description == 'blog post' && g.files.keys.length == 1
+        name = g.files.keys[0]
+        g_ids[name] = {:id => g.id, :contents => g.files[name].content}
+      end
+    end
+
+    s.posts.each do |post|
+      # if we already have a gist for the post, check if it needs updating
+      if g_ids.has_key?(post.name)
+        if ! g_ids[post.name].contents.eql?(post.contents)
+          @client.edit_gist('some_id', {
+                              :files => {post.name => {"content" => post.contents}}
+                            })
+        end
+      else # create a new gist
+        @client.create_gist({:public => true, :description => "blog post",
+                              :files => {post.name => {"content" => post.content}}})
+      end
+    end
+end
+
 desc "Push to github"
 task :push => [:tags] do
   require 'rubygems'
