@@ -154,6 +154,7 @@ task :gists do
   require 'rubygems'
   require 'jekyll'
   require 'netrc'
+  require 'json'
   require 'openssl'
   require 'net/http'
   require 'octokit'
@@ -172,24 +173,36 @@ task :gists do
       name = g.files.attrs.keys[0]
       raw = g.files.attrs[name][:raw_url]
       contents = fetch(raw)
-      g_ids[name.to_s] = {:id => g.id, :contents => contents.body}
+      # the body is binary encoded, we assume utf8 is an acceptable encoding
+      g_ids[name.to_s] = {:id => g.id, :contents => contents.body.force_encoding("utf-8")}
     end
   end
 
   s.posts.each do |post|
     # if we already have a gist for the post, check if it needs updating
     if g_ids.has_key?(post.name)
-      if ! g_ids[post.name][:contents].eql?(post.content)
+      if g_ids[post.name][:contents] != post.content
         puts 'Updating gist: ' + post.name
-        client.edit_gist(g_ids[post.name][:id], {
-                           :files => {post.name => {"content" => post.content}}
-                         })
+        ug = client.edit_gist(g_ids[post.name][:id], {
+                                :files => {post.name => {"content" => post.content}}
+                              })
+        g_ids[post.name] = {:id => ug.id, :permalink => post.url}
+      else
+        g_ids[post.name][:permalink] = post.url
       end
     else # create a new gist
       puts 'Creating gist: ' + post.name
-      client.create_gist({:public => true, :description => "blog post",
+      ng = client.create_gist({:public => true, :description => "blog post",
                            :files => {post.name => {"content" => post.content}}})
+      g_ids[post.name] = {:id => ng.id, :permalink => post.url}
     end
+  end
+
+  g_ids.keys.each do |k|
+    g_ids[k].delete(:contents)
+  end
+  File.open('gist_mapping.json', 'w') do |f|
+    f.puts(JSON.dump(g_ids))
   end
 end
 
