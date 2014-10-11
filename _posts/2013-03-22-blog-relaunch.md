@@ -3,15 +3,34 @@ layout: post
 title: Blog relaunch
 tags: [jekyll, blog]
 ---
-I just moved my blog to github. There are two main reasons for the move: First, it moves another "critical" component off my server and into the cloud. This allows me to experiment more on my server with less fear of consequences. Second, I have been wanting to give [jekyll](https://github.com/mojombo/jekyll) a try for a while now, and while this isn't a reason to move to github per se, my current deployment mechanic is lacking, and github nicely streamlines it for me. A further addition that is currently in planning stage is to add a github-based commenting system to the blog.
 
-There are currently a number of people using github issues for commenting. However, I find that approach unclean, as the comments are detached from the actual content you are commenting on. Instead, my idea is to instead base commenting on commit comments. The plan is to create an AJAX based system that follows the following mechanic:
+I just moved my blog over to GitHub. The main reasons for moving are:
 
-1. Grab all commit comments
-2. Grab the permalink of the post - convert it to the file name
-3. Extract all comments that deal with said file
-4. Display the count on the index (fade-in for actual comments), display the comment contents on the permalink page
+* Moving another 'critical' components off the VPS and into the
+cloud. With this, the server can safely be used for experimenting,
+without fear of killing my blog or email server. It should be noted,
+that this is only necessary since I have been too lazy to write
+provisioning scripts, which means that resetting the server is currently
+rather tedious.
+* It allows me to try out
+[jekyll](https://GitHub.com/mojombo/jekyll), all the while enjoying
+the streamlined deployment offered by GitHub pages. It also gives me
+a good starting point to add a GitHub-based commenting system, which
+is currently in the planning stage.
 
-    If this is too slow, drop index support - generate the comment count statically each time a new post gets added
+With regards to the GitHub-based comments, there are currently a
+number of people using a GitHub issues based approach. I personally
+dislike it, as comments are removed from the actual content you are
+commenting on. My plan is to base commenting on GitHub
+commit-comments. The system would roughly work as follows:
 
-Relaunching the blog also gave me the opportunity to redesign it. I switched to a very simplistic design, that I believe offers good readability and makes good use of screen real-estate.
+1. Grab the permalink of a post and extrapolate the path to its
+   source file
+2. Retrieve all commits for said file through the GitHub API
+3. Iterate over the commits and retrieve any comments from the API
+4. Display a comment-count on the index (click to fade-in the actual
+   comments); display all comments contents on the permalink page
+
+Along with the switch to jekyll, I also opted to redesign the blog. It
+now has a very simplistic design, which I believe offers good
+readability and makes good use of screen real-estate.
