@@ -6,7 +6,7 @@ tags: [jekyll, blog]
 
 I just moved my blog over to GitHub. The main reasons for moving are:
 
-* Moving another 'critical' components off the VPS and into the
+* Moving another 'critical' components off the <abbr>VPS</abbr> and into the
 cloud. With this, the server can safely be used for experimenting,
 without fear of killing my blog or email server. It should be noted,
 that this is only necessary since I have been too lazy to write
@@ -26,8 +26,8 @@ commit-comments. The system would roughly work as follows:
 
 1. Grab the permalink of a post and extrapolate the path to its
    source file
-2. Retrieve all commits for said file through the GitHub API
-3. Iterate over the commits and retrieve any comments from the API
+2. Retrieve all commits for said file through the GitHub <abbr>API</abbr>
+3. Iterate over the commits and retrieve any comments from the <abbr>API</abbr>
 4. Display a comment-count on the index (click to fade-in the actual
    comments); display all comments contents on the permalink page
 
