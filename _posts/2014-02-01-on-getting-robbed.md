@@ -4,21 +4,47 @@ title: On getting robbed
 tags: []
 ---
 
-So I got robbed over the weekend. Phone and wallet are both gone. In this day and age that is a pretty huge hindrance. Firstly, the phone is my only means of offline/mobile communication and thanks to Google Authenticator it is a very important part of my digital life as a whole. Secondly, no one lives off cash alone now-a-days and suddenly finding yourself in a situation where you're pretty much blank is rather upsetting.
+I was robbed over the weekend. Phone and wallet - both gone. In
+this day and age that is considerable inconvenience.
 
-I have to admit that the debacle could have been much worse, I only suffered financial damage, my phone is fully encrypted and I managed to lock all my cards before anything fishy happened. It is still a huge hassle[[^1]] and makes you feel pretty vulnerable.
+The phone is my primary means of offline communication and, thanks to
+Google Authenticator, also a critical component of my digital life as
+a whole. Additionally, suddenly being broke is rather upsetting.
 
-So I thought I should share some general advice on how to prepare yourself for a similar situation:
+Overall it could have been much worse. And while the financial loss
+hurt, my phone was fully encrypted and I managed to lock all cards
+before anything fishy could happen. It did make me feel rather
+vulnerable and was a considerable hassle to get everything back in
+order[^1]. I really have to thank my brother, for generally being
+awesome and just being a huge help throughout this mess.
 
-- Always have some cash at home (I would recommend about $50-100) that will allow you to buy groceries for a couple of days and pay for any unexpected costs, such as public transportation or "re-issue" fees
-- Makes sure you have photocopies of your most important documents locked away somewhere that you can easily access them
-- Have an old wallet in a closet
-- Encrypt everything! Especially your phone! This is a double edged sword, one the one hand it means your data is safe, on the other it means your chances of ever locating your phone are zero (since the thief will never be able to actually boot it back up)
-- Keep a record of things you wouldn't think are important, but actually are. Examples are the card numbers of your bank and credit cards and your passport numbers - in Germany these are required for the police report.
-- Make sure you have an easily accessible secondary communication tool available. This could be a Skype account with credit (remember that your credit card is locked at this point), an old phone or a patient room mate.
-- Keep an offline vulnerability list. E.g. Phone lost/stolen -> lock / wipe device, phone UID for the police report, backup plan for 2FA access to any affected services, secondary SIM or phone to stay "available"
-- An idea of whether your insurance covers any of the damage and how long your claim window is
+So I thought I should share some general advice on how to prepare
+yourself for a similar situation:
 
-At this point I would really like to thank my brother for being generally awesome and being a huge help throughout this mess. Generally though, the most important thing is to stay calm. All of the people that I have had to interact with were incredibly understanding and real helpful. In the end it is just money.
+- Keep some cash at home. This will allow you to cover unexpected
+  expenses or fees that might result from your situation and keep the
+  fridge stocked.
+- Keep photocopies of your most important documents.
+- Having a secondary wallet can be a huge boon.
+- Encrypt everything! Especially your phone! Unfortunately, encryption
+  is a double edge sword. On the one hand it means your data is safe,
+  on the other it lowers the chances of recovering your stolen
+  equipment to near zero (since the thief will never be able to
+  actually boot it back up)
+- Ensure you keep a record of important numbers, such as debit card
+  numbers, credit card numbers, passport numbers and your phone's
+  IMEI. In Germany these kind of details are required for the police
+  report.
+- Have a secondary phone or Skype account with credit available.
+- Keep a short checklist for theft-related vulnerabilities. Examples
+  are: a list of cards to lock/block, procedure to remote wipe your phone,
+  alternative access to 2FA protected services, secondary means of
+  communication
+- Make sure you are aware of if and what kind of damages your
+  insurance might cover and how long your claim window is.
 
-[^1]: Basically you will have to lock all your banking related cards and wait for new cards and PINs, lock your SIM and order a new one, lock any other cards you might have (e.g. gym membership, public transit, etc.), fill out a police report and get your driver's license and ID reissued. 
+The most important thing is to stay calm. Just remember: in the end it
+is just money. All of the people that helped me to get things back
+in order were incredibly understanding and really friendly.
+
+[^1]: Basically, you will have to lock all your banking related cards and wait for new cards and PINs, lock your <abbr>SIM</abbr> and order a new one, lock any other cards you might have (e.g. gym membership, public transit, etc.), fill out a police report and get your driver's license and ID reissued.
