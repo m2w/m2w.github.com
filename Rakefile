@@ -146,7 +146,7 @@ desc "Run jekyll locally"
 task :jekyll => [:tags] do
   require 'rubygems'
   require 'jekyll'
-  system 'jekyll serve -w -V'
+  system 'jekyll serve -w -V --skip-initial-build'
 end
 
 desc "Create/update gists for posts"
