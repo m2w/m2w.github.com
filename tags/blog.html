@@ -10,9 +10,12 @@
   <link href='http://fonts.googleapis.com/css?family=Average&subset=latin-ext' rel='stylesheet' type='text/css'>
   <link href="/static/css/main.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/bower_components/talaria/dist/talaria.min.js"></script>
+  <script type="text/javascript" src="/bower_components/async/lib/async.js"></script>
+  <script type="text/javascript" src="/bower_components/talaria/src/talaria.js"></script>
   <script type="text/javascript">
-    talaria.init({REPOSITORY_NAME: 'm2w.github.com', GITHUB_USERNAME: 'm2w'});
+    talaria.init({REPOSITORY_NAME: 'm2w.github.com',
+                  GITHUB_USERNAME: 'm2w', USE_GISTS: false,
+                  GIST_MAPPINGS: '/gist_mapping.json'});
   </script>
 </head>
 <body>
@@ -33,7 +36,7 @@
       <div class="cell"><small>26 Mar 2013</small></div>
       <div class="cell padded-cell">—</div>
       <div class="cell larger-text">
-        <a href="/2013/03/26/writing-a-github-hosted-commenting-system" class="list"># Writing a github hosted commenting system</a><br>
+        <a href="/2013/03/26/writing-a-github-hosted-commenting-system" class="list"># Writing a Github-hosted commenting system</a><br>
       </div>
     </div>
     <div class="row">
