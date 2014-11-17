@@ -1,180 +1,301 @@
-var expect = chai.expect;
+var expect = chai.expect,
+    singleCommentResponse = JSON.stringify(
+    [{"id": 1,
+      "url": "https://api.github.com/gists/ab21536bde9abe8dc3e8/comments/1",
+      "body": "Just commenting for the sake of commenting",
+      "user": {
+          "login": "octocat",
+          "id": 1,
+          "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/octocat",
+          "html_url": "https://github.com/octocat",
+          "followers_url": "https://api.github.com/users/octocat/followers",
+          "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+          "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+          "organizations_url": "https://api.github.com/users/octocat/orgs",
+          "repos_url": "https://api.github.com/users/octocat/repos",
+          "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/octocat/received_events",
+          "type": "User",
+          "site_admin": false
+      },
+      "created_at": "2011-04-18T23:23:56Z",
+      "updated_at": "2011-04-18T23:23:56Z"}]),
+    rateLimitedResponse = JSON.stringify(
+        {"message": "API rate limit exceeded for 127.0.0.1. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
+         "documentation_url": "https://developer.github.com/v3/#rate-limiting"}),
+    simpleMappingsResponse = JSON.stringify(
+        {"test1.md": {"permalink": "/test/200", "id": "single"},
+         "test2.md": {"permalink": "/test/404", "id":"nonexistant"},
+         "test3.md": {"permalink": "/test/403", "id":"ratelimited"}}
 
-describe('talaria', function () {
-    beforeEach(function () {
+    ),
+    notFoundResponse = JSON.stringify(
+        {"message": "Not Found",
+         "documentation_url": "https://developer.github.com/v3"}
+    ),
+    commit1 = {
+        "url": "https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+        "sha": "asdf123",
+        "html_url": "https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+        "comments_url": "https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e/comments",
+        "commit": {
+            "url": "https://api.github.com/repos/octocat/Hello-World/git/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+            "author": {
+                "name": "Monalisa Octocat",
+                "email": "support@github.com",
+                "date": "2011-04-14T16:00:49Z"
+            },
+            "committer": {
+                "name": "Monalisa Octocat",
+                "email": "support@github.com",
+                "date": "2011-04-14T16:00:49Z"
+            },
+            "message": "Fix all the bugs",
+            "tree": {
+                "url": "https://api.github.com/repos/octocat/Hello-World/tree/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+                "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+            },
+            "comment_count": 1
+        },
+        "author": {
+            "login": "octocat",
+            "id": 1,
+            "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/octocat",
+            "html_url": "https://github.com/octocat",
+            "followers_url": "https://api.github.com/users/octocat/followers",
+            "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+            "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+            "organizations_url": "https://api.github.com/users/octocat/orgs",
+            "repos_url": "https://api.github.com/users/octocat/repos",
+            "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/octocat/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "committer": {
+            "login": "octocat",
+            "id": 1,
+            "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/octocat",
+            "html_url": "https://github.com/octocat",
+            "followers_url": "https://api.github.com/users/octocat/followers",
+            "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+            "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+            "organizations_url": "https://api.github.com/users/octocat/orgs",
+            "repos_url": "https://api.github.com/users/octocat/repos",
+            "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/octocat/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "parents": [
+            {
+                "url": "https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+                "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+            }
+        ]
+    },
+    commit2 = $.extend(true, {}, commit1),
+    singleCommitResponse = JSON.stringify([commit1]),
+    multipleCommitsResponse = JSON.stringify([commit1, (function update() {
+        commit2.sha = 'asdf124';
+        return commit2;
+    })()]),
+    commitCommentsResponse = JSON.stringify(
+        [
+            {
+                "html_url": "https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e#commitcomment-1",
+                "url": "https://api.github.com/repos/octocat/Hello-World/comments/1",
+                "id": 1,
+                "body": "Great stuff",
+                "path": "file1.txt",
+                "position": 4,
+                "line": 14,
+                "commit_id": "6dcb09b5b57875f334f61aebed695e2e4193db5e",
+                "user": {
+                    "login": "octocat",
+                    "id": 1,
+                    "avatar_url": "",
+                    "gravatar_id": "",
+                    "url": "https://api.github.com/users/octocat",
+                    "html_url": "https://github.com/octocat",
+                    "followers_url": "https://api.github.com/users/octocat/followers",
+                    "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+                    "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+                    "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+                    "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+                    "organizations_url": "https://api.github.com/users/octocat/orgs",
+                    "repos_url": "https://api.github.com/users/octocat/repos",
+                    "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+                    "received_events_url": "https://api.github.com/users/octocat/received_events",
+                    "type": "User",
+                    "site_admin": false
+                },
+                "created_at": "2011-04-14T16:00:49Z",
+                "updated_at": "2011-04-14T16:00:49Z"
+            }
+        ]
+    );
+
+describe('talaria with USE_GISTS = true', function () {
+    before(function () {
         server = sinon.fakeServer.create();
+        server.autoRespond = true;
+        server.respondWith("/mappings-missing.json",
+                           [404, {"Content-Type": "text/html"},
+                            "File not found"]);
+        server.respondWith("/mappings.json",
+                           [200, {"Content-Type": "application/json"},
+                            simpleMappingsResponse]);
+        server.respondWith(/ratelimited/,
+                           [403, {"X-RateLimit-Remaining": 0},
+                            rateLimitedResponse]);
+        server.respondWith(/nonexistant/,
+                           [404, {},
+                            notFoundResponse]);
+        server.respondWith(/single/,
+                           [200, {},
+                            singleCommentResponse]);
     });
-    afterEach(function () {
-        // remove any talaria generated html
-        $('div.talaria-wrapper').remove();
+    after(function () {
         server.restore();
     });
-    describe('using gists', function () {
-        before(function () {
-            talaria.test.init({USE_GISTS: true, GITHUB_USERNAME: 'm2w',
-                               GIST_MAPPINGS: '/mappings.json'});
-        });
-        after(function () {
-            server.restore();
-        });
-        it('should retrieve and display all comments for a post',
-           function () {
-               server.respondWith('/mappings.json',
-                                  [200, {"Content-Type": "application/json"},
-                                   JSON.stringify(
-                                       {"test.md":
-                                        {"permalink": "/this/is/a/test",
-                                         "id": "dummy1"}}
-                                   )]
-               );
-               server.respondWith(
-                   /https:\/\/api.github.com\/gists\/dummy1\/comments/,
-                   function (req) {
-                       req.respond(404, {},
-                                   JSON.stringify(
-                                       [
-                                           {
-                                               "id": 1,
-                                               "url":
-                                               "https://api.github.com/gists/ab21536bde9abe8dc3e8/comments/1",
-                                               "body": "Just commenting for the sake of commenting",
-                                               "user": {
-                                                   "login": "octocat",
-                                                   "id": 1,
-                                                   "avatar_url":
-                                                   "https://github.com/images/error/octocat_happy.gif",
-                                                   "gravatar_id": "",
-                                                   "url":
-                                                   "https://api.github.com/users/octocat",
-                                                   "html_url":
-                                                   "https://github.com/octocat",
-                                                   "followers_url":
-                                                   "https://api.github.com/users/octocat/followers",
-                                                   "following_url":
-                                                   "https://api.github.com/users/octocat/following{/other_user}",
-                                                   "gists_url":
-                                                   "https://api.github.com/users/octocat/gists{/gist_id}",
-                                                   "starred_url":
-                                                   "https://api.github.com/users/octocat/starred{/owner}{/repo}",
-                                                   "subscriptions_url":
-                                                   "https://api.github.com/users/octocat/subscriptions",
-                                                   "organizations_url":
-                                                   "https://api.github.com/users/octocat/orgs",
-                                                   "repos_url":
-                                                   "https://api.github.com/users/octocat/repos",
-                                                   "events_url":
-                                                   "https://api.github.com/users/octocat/events{/privacy}",
-                                                   "received_events_url":
-                                                   "https://api.github.com/users/octocat/received_events",
-                                                   "type": "User",
-                                                   "site_admin": false
-                                               },
-                                               "created_at":
-                                               "2011-04-18T23:23:56Z",
-                                               "updated_at":
-                                               "2011-04-18T23:23:56Z"
-                                           }
-                                       ]
-                                   ));
-                   }
-               );
-
-               talaria.test.gists();
-               server.respond();
-
-               expect($('div.talaria-wrapper div.talaria-load-error').hasClass('hide')).to.be.true;
-               expect($('div.talaria-wrapper div.talaria-comment-bubble')).to.have.length(1)
-               expect($('#1')).to.have.length(1);
-           });
-        it('should display an error message when unable to locate a gist',
-           function () {
-               server.respondWith('/mappings.json',
-                                  [200, {"Content-Type": "application/json"},
-                                   JSON.stringify(
-                                       {"test.md":
-                                        {"permalink": "/this/is/a/test",
-                                         "id": "asdf"}}
-                                   )]
-               );
-               server.respondWith(
-                   /https:\/\/api.github.com\/gists\/idonotexist\/comments/,
-                   function (req) {
-                       req.respond(404, {},
-                                   JSON.stringify(
-                                       {
-                                           "message": "Not Found",
-                                           "documentation_url": "https://developer.github.com/v3"
-                                       }
-                                   ));
-                   }
-               );
-
-               talaria.test.gists();
-               server.respond();
-
-               var err = $('div.talaria-wrapper div.talaria-load-error');
-               expect(err.hasClass('hide')).to.be.false;
-               expect(err.text()).to.equal('Unable to find a matching gist.');
-               expect(
-                   $('div.talaria-wrapper div.talaria-comment-count').
-                       hasClass('hide')
-               ).to.be.true;
-           });
-        it('should display an error when unable to load the gist<=>post mappings',
-           function () {
-               server.respondWith('/mappings.json',
-                                  [404, {"Content-Type": "text/html"},
-                                   "File not found"]
-               );
-               talaria.test.gists();
-               server.respond();
-
-               var err = $('div.talaria-wrapper div.talaria-load-error');
-               expect(err.hasClass('hide')).to.be.false;
-               expect(err.text()).to.equal('Unable to load comments.');
-               expect(
-                   $('div.talaria-wrapper div.talaria-comment-count').
-                       hasClass('hide')
-               ).to.be.true;
-           });
-        it('should display an error message when exceeding GitHub API rate-limit',
-           function () {
-               server.respondWith(
-                   // FIXME: currently this never fires, not sure why...
-                   /gists\/asdf\/comments/gi,
-                   [403, {"X-RateLimit-Remaining": 0},
-                    JSON.stringify(
-                        {"message": "API rate limit exceeded for 127.0.0.1. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-                         "documentation_url": "https://developer.github.com/v3/#rate-limiting"
-                        })]
-               );
-               server.respondWith('/mappings.json',
-                                  [200, {"Content-Type": "application/json"},
-                                   JSON.stringify(
-                                       {"test.md":
-                                        {"permalink": "/this/is/a/test",
-                                         "id": "asdf"}}
-                                   )]
-               );
-               talaria.test.gists();
-               server.respond();
-
-               var err = $('div.talaria-wrapper div.talaria-load-error');
-               expect(err.hasClass('hide')).to.be.false;
-               expect(err.text()).to.equal(
-                   'The github API rate-limit has been reached. ' +
-                       'Unable to load comments.'
-               );
-               expect(
-                   $('div.talaria-wrapper div.talaria-comment-count').
-                       hasClass('hide')
-               ).to.be.true;
-           });
-        it('should cache any API interaction results');
+    afterEach(function () {
+        $('div.talaria-wrapper').remove();
     });
-    describe('using commits', function () {
-        it('should retrieve all comments for a post');
-        it('should display an error message when exceeding GitHub API rate-limit');
-        it('should cache any API interaction results');
+    it('should display an error when unable to load the gist<=>post mappings',
+       function () {
+           return talaria.init({USE_GISTS: true, GITHUB_USERNAME: 'm2w',
+                         GIST_MAPPINGS: '/missing-mappings.json'}).
+               then(function (){
+                   var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                   expect(errorNode.hasClass('hide')).to.be.false;
+                   expect(errorNode.text()).to.equal('Unable to load comments.');
+                   expect($('div.talaria-wrapper div.talaria-comment-bubble')).to.have.length(0);
+               });
+       });
+    it('should display an error message when unable to locate a gist', function () {
+        $('a.permalink').attr('href','/test/404');
+        return talaria.init({USE_GISTS: true, GITHUB_USERNAME: 'm2w',
+                      GIST_MAPPINGS: '/mappings.json'}).
+            then(function () {
+                var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                expect(errorNode.hasClass('hide')).to.be.false;
+                expect(errorNode.text()).to.equal('Unable to find a matching gist.');
+                expect($('div.talaria-wrapper div.talaria-comment-bubble')).to.have.length(0);
+            });
     });
+    it('should display an error message when exceeding GitHub API rate-limit',
+       function () {
+           $('a.permalink').attr('href','/test/403');
+           return talaria.init({USE_GISTS: true, GITHUB_USERNAME: 'm2w',
+                         GIST_MAPPINGS: '/mappings.json'}).
+               then(function () {
+                   var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                   expect(errorNode.hasClass('hide')).to.be.false;
+                   expect(errorNode.text()).to.equal('The Github API rate-limit has been reached. Unable to load comments.');
+                   expect($('div.talaria-wrapper div.talaria-comment-bubble')).to.have.length(0);
+               });
+       });
+    it('should retrieve and display all comments for a post', function () {
+        $('a.permalink').attr('href','/test/200');
+        return talaria.init({USE_GISTS: true, GITHUB_USERNAME: 'm2w',
+                      GIST_MAPPINGS: '/mappings.json'}).
+            then(function () {
+        expect($('div.talaria-wrapper div.talaria-load-error').
+               hasClass('hide')).to.be.true;
+        expect($('div.talaria-wrapper div.talaria-comment-bubble')).
+                    to.have.length(1);
+            });
+    });
+    it('should cache any API interaction results');
+});
+describe('talaria with USE_GISTS = false', function () {
+    before(function () {
+        server = sinon.fakeServer.create();
+        server.autoRespond = true;
+        server.respondWith(/ratelimited/,
+                           [403, {"X-RateLimit-Remaining": 0},
+                            rateLimitedResponse]);
+        server.respondWith(/nonexistant/,
+                           [200, {},
+                            JSON.stringify([])]);
+        server.respondWith(/2014-11-08-test-single.md/,
+                           [200, {},
+                            singleCommitResponse]);
+        server.respondWith(/2014-11-08-test-multiple.md/,
+                           [200, {},
+                            multipleCommitsResponse]);
+        server.respondWith(/asdf123/,
+                           [200, {},
+                            commitCommentsResponse]);
+        server.respondWith(/asdf124/,
+                           [200, {},
+                            commitCommentsResponse]);
+    });
+    after(function () {
+        server.restore();
+    });
+    afterEach(function () {
+        $('div.talaria-wrapper').remove();
+    });
+    it('should display an error when no commits can be found for a permalink', function () {
+        $('a.permalink').attr('href','/2014/11/08/nonexistant');
+        return talaria.init({GITHUB_USERNAME: 'm2w',
+                             REPOSITORY_NAME: 'm2w.github.com'}).
+            then(function () {
+                var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                expect(errorNode.hasClass('hide')).to.be.false;
+                expect(errorNode.text()).to.
+                    equal('Unable to find commits for this post.');
+                expect($('div.talaria-wrapper div.talaria-comment-bubble')).
+                    to.have.length(0);
+            });
+    });
+    it('should render the comment for a single commit', function () {
+        $('a.permalink').attr('href','/2014/11/08/test-single');
+        return talaria.init({GITHUB_USERNAME: 'm2w',
+                             REPOSITORY_NAME: 'm2w.github.com'}).
+            then(function (comments) {
+                var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                expect(errorNode.hasClass('hide')).to.be.true;
+                expect($('div.talaria-wrapper div.talaria-comment-bubble')).
+                    to.have.length(1);
+            });
+    });
+    it('should render all comments from multiple commits', function () {
+        $('a.permalink').attr('href','/2014/11/08/test-multiple');
+        return talaria.init({GITHUB_USERNAME: 'm2w',
+                             REPOSITORY_NAME: 'm2w.github.com'}).
+            then(function () {
+                var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                expect(errorNode.hasClass('hide')).to.be.true;
+                expect($('div.talaria-wrapper div.talaria-comment-bubble')).
+                    to.have.length(2);
+            });
+    });
+    it('should display an error message when exceeding GitHub API rate-limit',
+       function () {
+           $('a.permalink').attr('href','/2014/11/08/ratelimited');
+           return talaria.init({GITHUB_USERNAME: 'm2w',
+                                REPOSITORY_NAME: 'm2w.github.com'}).
+               then(function () {
+                   var errorNode = $('div.talaria-wrapper div.talaria-load-error');
+                   expect(errorNode.hasClass('hide')).to.be.false;
+                   expect(errorNode.text()).to.equal('The Github API rate-limit has been reached. Unable to load comments.');
+                   expect($('div.talaria-wrapper div.talaria-comment-bubble')).to.have.length(0);
+               });
+       });
+    it('should cache any API interaction results');
 });

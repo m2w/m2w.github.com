@@ -1,54 +1,29 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="A blog on programming, learning and traveling">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Posts tagged 'angularjs'</title>
-
-  <link href='http://fonts.googleapis.com/css?family=Average&subset=latin-ext' rel='stylesheet' type='text/css'>
-  <link href="/static/css/main.css" rel="stylesheet" type="text/css">
-  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/bower_components/async/lib/async.js"></script>
-  <script type="text/javascript" src="/bower_components/talaria/src/talaria.js"></script>
-  <script type="text/javascript">
-   talaria.init({REPOSITORY_NAME: 'm2w.github.com',
-                 GITHUB_USERNAME: 'm2w', USE_GISTS: true,
-                 GIST_MAPPINGS: '/gist_mapping.json'});
-  </script>
-</head>
-<body>
-  <div id="container">
-    <div id="header" class="center">
-      <h1><a href="/" id="title">blog.tibidat.com</a></h1>
-      <hr>
-      <a href="/about.html"># About</a>
-      <a href="/readinglist.html"># Reading List</a>
-    </div>
-    <article>
+---
+layout: base
+---
+<article>
   <header>
-    <h2>Posts tagged <em>angularjs</em></h2>
+    <h2>Posts tagged <em>{{ tag }}</em></h2>
   </header>
   <div class="table">
-    
+    {% for post in p %}
     <div class="row">
-      <div class="cell"><small>04 Feb 2014</small></div>
+      <div class="cell"><small>{{ post.date | date_to_string }}</small></div>
       <div class="cell padded-cell">—</div>
       <div class="cell larger-text">
-        <a href="/2014/02/04/notes-on-angular" class="list"># Notes on Angular.js</a><br>
+        <a href="{{ post.url }}" class="list"># {{ post.title }}</a><br>
       </div>
     </div>
     <div class="row">
       <div class="cell"></div>
       <div class="cell padded-cell"></div>
-      <div class="cell">
-        <small>Additionally tagged as:&nbsp;
-          <a href="/tags/js.html">js</a>
-        </small>
+      <div class="cell">{% if post.tags.size > 0 %}
+        <small>Additionally tagged as:&nbsp;{% for t in post.tags %}{% unless t == tag %}
+          <a href="/tags/{{ t }}.html">{{ t }}</a>{% case forloop.rindex0 %}{% when 1 %} and {% when 0 %}{% else %}, {% endcase %}{% endunless %}{% endfor %}
+        </small>{% endif %}
       </div>
     </div>
-    
+    {% endfor %}
     <div class="row">
       <div class="cell"></div>
       <div class="cell padded-cell"></div>
@@ -57,6 +32,3 @@
     </div>
   </div>
 </article>
-
-  </div>
-</body>
