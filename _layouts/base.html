@@ -9,15 +9,8 @@
 
   <link href='http://fonts.googleapis.com/css?family=Average&subset=latin-ext' rel='stylesheet' type='text/css'>
   <link href="/static/css/main.css" rel="stylesheet" type="text/css">
-  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/bower_components/async/lib/async.js"></script>
   <script type="text/javascript" src="/bower_components/bluebird/js/browser/bluebird.js"></script>
   <script type="text/javascript" src="/bower_components/talaria/lib/talaria.js"></script>
-  <script type="text/javascript">
-   talaria.init({REPOSITORY_NAME: 'm2w.github.com',
-                 GITHUB_USERNAME: 'm2w', USE_GISTS: true,
-                 GIST_MAPPINGS: '/gist_mapping.json'});
-  </script>
 </head>
 <body>
   <div id="container">
@@ -29,4 +22,9 @@
     </div>
     {{content}}
   </div>
+  <script type="text/javascript">
+   talaria.init({REPOSITORY_NAME: 'm2w.github.com',
+                 GITHUB_USERNAME: 'm2w', USE_GISTS: true,
+                 GIST_MAPPINGS: '/gist_mapping.json'});
+  </script>
 </body>
