@@ -149,6 +149,44 @@ task :jekyll => [:tags] do
   system 'jekyll serve -w -V'
 end
 
+desc "Create issue for posts"
+task :issues do
+  require 'rubygems'
+  require 'jekyll'
+  require 'netrc'
+  require 'json'
+  require 'openssl'
+  require 'net/http'
+  require 'octokit'
+
+  client = Octokit::Client.new(:netrc => true)
+
+  conf = Jekyll.configuration({})
+  s = Jekyll::Site.new(conf)
+  s.read
+
+  em = {}
+
+  if File.file?('issue_mapping.json')
+    existing_mappings = File.read('issue_mapping.json')
+    em = JSON.parse(existing_mappings)
+  end
+
+  s.posts.each do |post|
+    # since issues do not actually track post content, we only care about new posts
+    if !em.has_key?(post.name)
+      ni = client.create_issue("m2w/blog.tibidat.com", "Comments for #{post.title}",
+                               "", {:labels => "comments"})
+      em[post.name] = {:id => ni.id, :permalink => post.url}
+    end
+  end
+
+  # write new issues to disk
+  File.open('issue_mapping.json', 'w') do |f|
+    f.puts(JSON.dump(em))
+  end
+end
+
 desc "Create/update gists for posts"
 task :gists do
   require 'rubygems'
@@ -193,7 +231,7 @@ task :gists do
     else # create a new gist
       puts 'Creating gist: ' + post.name
       ng = client.create_gist({:public => true, :description => "blog post",
-                           :files => {post.name => {"content" => post.content}}})
+                               :files => {post.name => {"content" => post.content}}})
       g_ids[post.name] = {:id => ng.id, :permalink => post.url}
     end
   end
