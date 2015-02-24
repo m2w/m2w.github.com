@@ -1,8 +1,8 @@
-----
+---
 layout: post
 title: New Year's Resolutions 2015
 tags: []
-----
+---
 
 Happy New Year! Let's hope for another great year.
 My resolutions:
