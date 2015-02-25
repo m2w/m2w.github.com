@@ -3,11 +3,12 @@ layout: static
 title: RPT
 ---
 
-Welcome to my Resolution Progress Tracker (RPT). It is a simple way
-for me to keep track of progress towards my resolutions for the
-current year.
+<header>
+<h2>Resolution Progress Tracker</h2>
+</header>
 
-Eventually this will be more visually appealing ;)
+The Resolution Progress Tracker (RPT) is a simple way to keep track of
+progress towards my resolutions for the current year.
 
 {% for entry in site.data.tracker %}
   <dl>
@@ -16,3 +17,4 @@ Eventually this will be more visually appealing ;)
   </dl>
 {% endfor %}
 
+Eventually this will be more visually appealing ;)
